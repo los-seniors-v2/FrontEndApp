@@ -37,9 +37,10 @@
     },
     {
         "name": "Quique Gonzales",
-        "email": "quiqueGonzales",
+        "email": "quiqueGonzales@gmail.com",
         "photo": "https://randomuser.me/api/portraits",
         "subscription": "free-plan"
     }
+
 
 ]
