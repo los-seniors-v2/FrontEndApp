@@ -1,4 +1,4 @@
-export class Recipe {
+export class Food_Item {
     constructor(id, name, calories, fat_total_g, carb_g, protein_g, image) {
         this.id = id;
         this.name = name;
