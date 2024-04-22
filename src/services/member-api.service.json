@@ -35,5 +35,12 @@
         "photo": "https://randomuser.me/api/portraits",
         "subscription": "anual-plan"
     },
+    {
+        "name": "Quique Gonzales",
+        "email": "quiqueGonzales@gmail.com",
+        "photo": "https://randomuser.me/api/portraits",
+        "subscription": "free-plan"
+    }
+
 
 ]

@@ -9,8 +9,8 @@
             "Repeat for the recommended amount of repetitions."
         ],
         "category": "strength",
-        "images": "https://fitwill.app/_next/image/?url=https%3A%2F%2Ffitwill.app%2Fapi%2Fimage%2F0001%3Fw%3D1024%26h%3D576&w=3840&q=75",
-        "id": "3_4_Sit-Up"
+        "image": "https://fitwill.app/_next/image/?url=https%3A%2F%2Ffitwill.app%2Fapi%2Fimage%2F0001%3Fw%3D1024%26h%3D576&w=3840&q=75",
+        "id": "3_4_Sit_Up"
     },
     {
         "name": "90/90 Hamstring",
@@ -21,10 +21,9 @@
             "Repeat for 10-20 repetitions, and then switch to the other leg."
         ],
         "category": "stretching",
-        "images":
+        "image":
             "https://media.istockphoto.com/id/1154100042/vector/woman-doing-exercise-with-hamstring-stretch-for-back-and-leg-muscle-relaxation.jpg?s=612x612&w=0&k=20&c=M1E4CzFrZqDtL51VB_WemWj_IgKHejWsVFijoap3AR8=",
-        "id": "90_90_Hamstring"
-
+        "id": "90_90_Hamstring",
     },
     {
         "name": "Ab Crunch Machine",
@@ -35,9 +34,9 @@
             "Repeat the movement for the prescribed amount of repetitions."
         ],
         "category": "strength",
-        "images":
-            "https://t4.ftcdn.net/jpg/06/08/35/71/360_F_608357114_jVU2Qo8LhAnVsBpdy9SDv5PHl3rzRZeL.jpg"
-
+        "image":
+            "https://t4.ftcdn.net/jpg/06/08/35/71/360_F_608357114_jVU2Qo8LhAnVsBpdy9SDv5PHl3rzRZeL.jpg",
+        "id": "Ab_Crunch_Machine"
     },
     {
         "name": "Ab Roller",
@@ -48,8 +47,9 @@
             "After a pause at the stretched position, start pulling yourself back to the starting position as you breathe out. Tip: Go slowly and keep your abs tight at all times."
         ],
         "category": "strength",
-        "images":
-            "https://www.endomondo.com/wp-content/uploads/2024/01/Standard-Kneeling-Ab-Wheel-Rollouts-1.jpg"
+        "image":
+            "https://www.endomondo.com/wp-content/uploads/2024/01/Standard-Kneeling-Ab-Wheel-Rollouts-1.jpg",
+        "id": "Ab_Roller"
     },
     {
         "name": "Adductor",
@@ -59,8 +59,9 @@
             "While trying to relax the muscles if the inner thigh, roll over the foam between your hip and knee, holding points of tension for 10-30 seconds. Repeat with the other leg."
         ],
         "category": "stretching",
-        "images":
-            "https://mobilephysiotherapyclinic.net/wp-content/uploads/2022/12/Sumo-Squat-1024x683.webp"
+        "image":
+            "https://mobilephysiotherapyclinic.net/wp-content/uploads/2022/12/Sumo-Squat-1024x683.webp",
+        "id": "Adductor"
     },
     {
         "name": "Adductor/Groin",
@@ -71,7 +72,8 @@
             "Now, relax the muscles in your legs as your partner pushes your feet apart, stretching as far as is comfortable for you. Be sure to let your partner know when the stretch is adequate to prevent overstretching or injury."
         ],
         "category": "stretching",
-        "images": "https://cdn.shopify.com/s/files/1/1633/7705/files/exercises_for_hip_adductors_480x480.jpg?v=1628322094"
+        "image": "https://cdn.shopify.com/s/files/1/1633/7705/files/exercises_for_hip_adductors_480x480.jpg?v=1628322094",
+        "id": "Adductor_Groin"
     },
     {
         "name": "Advanced Kettlebell Windmill",
@@ -82,7 +84,8 @@
             "Pause for a second and reverse the motion back to the starting position."
         ],
         "category": "strength",
-        "images": "https://www.shutterstock.com/shutterstock/photos/2407367963/display_1500/stock-vector-woman-doing-kettlebell-windmills-exercise-flat-vector-illustration-isolated-on-white-background-2407367963.jpg"
+        "image": "https://www.shutterstock.com/shutterstock/photos/2407367963/display_1500/stock-vector-woman-doing-kettlebell-windmills-exercise-flat-vector-illustration-isolated-on-white-background-2407367963.jpg",
+        "id": "Advanced_Kettlebell_Windmill"
     },
     {
         "name": "Air Bike",
@@ -95,7 +98,8 @@
             "Continue alternating in this manner until all of the recommended repetitions for each side have been completed."
         ],
         "category": "strength",
-        "images": "https://thumbs.dreamstime.com/z/man-doing-air-bike-training-assault-bike-cardio-exercise-flat-vector-illustration-isolated-white-background-man-doing-air-281085240.jpg"
+        "image": "https://thumbs.dreamstime.com/z/man-doing-air-bike-training-assault-bike-cardio-exercise-flat-vector-illustration-isolated-white-background-man-doing-air-281085240.jpg",
+        "id": "Air_Bike"
     },
     {
         "name": "All Fours Quad Stretch",
@@ -105,10 +109,8 @@
             "Focus on extending your hips, thrusting them towards the floor. Hold for 10-20 seconds and then switch sides."
         ],
         "category": "stretching",
-        "images": [
-            "All_Fours_Quad_Stretch/0.jpg",
-            "All_Fours_Quad_Stretch/1.jpg"
-        ]
+        "image": "https://cdn-cccio.nitrocdn.com/sQAAylIpwgMYZgBLSXcMgCkUIbfIzHvb/assets/images/optimized/rev-3d9de4c/www.aleanlife.com/wp-content/uploads/2021/03/all-fours-quad-stretch-490x168.jpg",
+        "id": "All_Fours_Quad_Stretch"
     },
     {
         "name": "Alternate Hammer Curl",
@@ -121,10 +123,8 @@
             "Continue alternating in this manner for the recommended amount of repetitions."
         ],
         "category": "strength",
-        "images": [
-            "Alternate_Hammer_Curl/0.jpg",
-            "Alternate_Hammer_Curl/1.jpg"
-        ]
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_RmSPg9hpSUpOGSZRTry4mWBBsdEsa0Ig2s-VK39V0w&s",
+        "id": "Alternate_Hammer_Curl"
     },
     {
         "name": "Alternate Heel Touchers",
@@ -136,10 +136,8 @@
             "Continue alternating sides in this manner until all prescribed repetitions are done."
         ],
         "category": "strength",
-        "images": [
-            "Alternate_Heel_Touchers/0.jpg",
-            "Alternate_Heel_Touchers/1.jpg"
-        ],
+        "image": "https://as1.ftcdn.net/v2/jpg/04/73/27/10/1000_F_473271019_bU8VUKZjsm3Oxrbc4eiIwzxUvrbTWFF9.jpg",
+        "id": "Alternate_Heel_Touchers"
     },
     {
         "name": "Alternate Incline Dumbbell Curl",
@@ -151,10 +149,8 @@
             "Continue alternating in this manner for the recommended amount of repetitions."
         ],
         "category": "strength",
-        "images": [
-            "Alternate_Incline_Dumbbell_Curl/0.jpg",
-            "Alternate_Incline_Dumbbell_Curl/1.jpg"
-        ],
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwDaii4gTM4faJqVRnjLdfcsuM2BBEZsE675S0C1IffQ&s",
+        "id": "Alternate_Incline_Dumbbell_Curl"
     },
     {
         "name": "Alternate Leg Diagonal Bound",
@@ -165,10 +161,7 @@
             "Repeat the sequence with the other leg."
         ],
         "category": "plyometrics",
-        "images": [
-            "Alternate_Leg_Diagonal_Bound/0.jpg",
-            "Alternate_Leg_Diagonal_Bound/1.jpg"
-        ],
+        "image": "https://www.trojanfitness.com.au/wp-content/uploads/2023/08/Single-Leg-Hop.jpg",
         "id": "Alternate_Leg_Diagonal_Bound"
     },
     {
@@ -180,10 +173,7 @@
             "After pausing at the top, return to the starting position and repeat on the opposite side."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Cable_Shoulder_Press/0.jpg",
-            "Alternating_Cable_Shoulder_Press/1.jpg"
-        ],
+        "image": "https://cdn.shopify.com/s/files/1/1633/7705/files/cable_overhead_press.jpg?v=1631553707",
         "id": "Alternating_Cable_Shoulder_Press"
     },
     {
@@ -196,10 +186,7 @@
             "Return the weights to the starting position and continue alternating to the front and side."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Deltoid_Raise/0.jpg",
-            "Alternating_Deltoid_Raise/1.jpg"
-        ],
+        "image": "https://s.yimg.com/ny/api/res/1.2/iUUFPxP_lEEo6sMGwmAxaw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/toms_guide_826/8e4a7a699f39ef23b7c5f443726aa808",
         "id": "Alternating_Deltoid_Raise"
     },
     {
@@ -211,10 +198,7 @@
             "Raise the kettlebell and repeat on the opposite side."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Floor_Press/0.jpg",
-            "Alternating_Floor_Press/1.jpg"
-        ],
+        "image": "https://gymvisual.com/13305-thickbox_default/dumbbell-alternating-floor-press.jpg",
         "id": "Alternating_Floor_Press"
     },
     {
@@ -225,10 +209,7 @@
             "Lower the cleaned kettlebell to a hanging position and clean the alternate kettlebell. Repeat."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Hang_Clean/0.jpg",
-            "Alternating_Hang_Clean/1.jpg"
-        ],
+        "image": "https://i.ytimg.com/vi_webp/VQsrEfbfDOo/hqdefault.webp",
         "id": "Alternating_Hang_Clean"
     },
     {
@@ -239,10 +220,7 @@
             "Lower the pressed kettlebell to the starting position and immediately press with your other arm."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Kettlebell_Press/0.jpg",
-            "Alternating_Kettlebell_Press/1.jpg"
-        ],
+        "image": "https://rxfitnessequipment.com/wp-content/uploads/alternating-kettlebell-press-steps.png?ver=3.0",
         "id": "Alternating_Kettlebell_Press"
     },
     {
@@ -253,10 +231,7 @@
             "Lower the kettlebell in the working arm and repeat with your other arm."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Kettlebell_Row/0.jpg",
-            "Alternating_Kettlebell_Row/1.jpg"
-        ],
+        "image": "https://thehybridathlete.com/wp-content/uploads/2021/03/Bent-over-Row.png",
         "id": "Alternating_Kettlebell_Row"
     },
     {
@@ -267,10 +242,7 @@
             "Then lower the kettlebell to the floor and begin the kettlebell in the opposite hand. Repeat for several reps."
         ],
         "category": "strength",
-        "images": [
-            "Alternating_Renegade_Row/0.jpg",
-            "Alternating_Renegade_Row/1.jpg"
-        ],
+        "image": "https://i.pinimg.com/originals/09/63/1c/09631c961dd9f3305c65eba0e5f21220.png",
         "id": "Alternating_Renegade_Row"
     },
     {
@@ -281,10 +253,7 @@
             "When you are done with the right foot, then repeat with the left leg."
         ],
         "category": "stretching",
-        "images": [
-            "Ankle_Circles/0.jpg",
-            "Ankle_Circles/1.jpg"
-        ],
+        "image": "https://thumbs.dreamstime.com/b/basic-rgb-261107144.jpg",
         "id": "Ankle_Circles"
     },
     {
@@ -295,39 +264,8 @@
             "Grasp the thigh or knee of the bottom leg and pull both of your legs into the chest. Relax your neck and shoulders. Hold for 10-20 seconds and then switch sides."
         ],
         "category": "stretching",
-        "images": [
-            "Ankle_On_The_Knee/0.jpg",
-            "Ankle_On_The_Knee/1.jpg"
-        ],
+        "image": "https://www.omgtb.com/wp-content/uploads/2020/12/knee-test.png",
         "id": "Ankle_On_The_Knee"
-    },
-    {
-        "name": "Anterior Tibialis-SMR",
-        "instructions": [
-            "Begin seated on the ground with your legs bent and your feet on the floor.",
-            "Using a Muscle Roller or a rolling pin, apply pressure to the muscles on the outside of your shins. Work from just below the knee to above the ankle, pausing at points of tension for 10-30 seconds. Repeat on the other leg."
-        ],
-        "category": "stretching",
-        "images": [
-            "Anterior_Tibialis-SMR/0.jpg",
-            "Anterior_Tibialis-SMR/1.jpg"
-        ],
-        "id": "Anterior_Tibialis-SMR"
-    },
-    {
-        "name": "Anti-Gravity Press",
-        "instructions": [
-            "Place a bar on the ground behind the head of an incline bench.",
-            "Lay on the bench face down. With a pronated grip, pick the barbell up from the floor. Flex the elbows, performing a reverse curl to bring the bar near your chest. This will be your starting position.",
-            "To begin, press the barbell out in front of your head by extending your elbows. Keep your arms parallel to the ground throughout the movement.",
-            "Return to the starting position and repeat to complete the set."
-        ],
-        "category": "strength",
-        "images": [
-            "Anti-Gravity_Press/0.jpg",
-            "Anti-Gravity_Press/1.jpg"
-        ],
-        "id": "Anti-Gravity_Press"
     },
 
 ]
