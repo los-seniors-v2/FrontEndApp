@@ -6,7 +6,7 @@
       "email": "eztrainer@gmail.com",
       "photo": "https://www.google.com",
       "trajectory": "NPC Peru champion 2023",
-      "knowledge": "Nutritionist and personal trainer"
+      "knowledge": "Nutritionist and Certified trainer"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "email": "jctrainer@gmail.com",
       "photo": "https://www.google.com",
       "trajectory": "Texas Pro Show 2022 3rd place",
-      "knowledge": "Personal trainer"
+      "knowledge": "Certified trainer"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "email": "aptrainer@gmail.com",
       "photo": "https://www.google.com",
       "trajectory": "NPC Argentina Overall champion 2023",
-      "knowledge": "Personal trainer"
+      "knowledge": "Certified trainer"
     }
   ]
 }
