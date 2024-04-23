@@ -77,3 +77,23 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+/* CALENDAR SECTION */
+.my-calendar .p-calendar .p-datepicker {
+  background-color: #f0f0f0;
+}
+
+.my-calendar .p-calendar .p-datepicker td span {
+  color: #333;
+}
+
+.my-calendar .p-calendar .p-datepicker td span.p-highlight {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.my-calendar .p-calendar .p-datepicker .p-datepicker-header {
+  background-color: #007bff;
+  color: #fff;
+}
