@@ -1,10 +1,10 @@
 <script>
 import { CoachApiServices } from '../services/coach-api-services.js';
 import Calendar from 'primevue/calendar';
-import 'primevue/resources/themes/saga-blue/theme.css'; //theme
-import 'primevue/resources/primevue.min.css'; //core css
-import 'primeicons/primeicons.css'; //icons
-import logo from '../assets/flexpal.png';
+import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
+
 export default {
   name: "book-a-session",
   data() {
