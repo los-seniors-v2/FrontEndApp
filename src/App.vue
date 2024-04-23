@@ -1,18 +1,25 @@
 
-
 <script>
 
   import ToolbarSection from './components/Toolbar-section.component.vue';
+  import Plans from './components/Plans-section.component.vue';
 
   export default {
   components: {
-  ToolbarSection
+  ToolbarSection, Plans
 }
 };
 </script>
 
 <template>
-  <ToolbarSection />
+  <div>
+    <ToolbarSection />
+  </div>
+  <div>
+    <Plans />
+  </div>
+
+
 </template>
 
 
