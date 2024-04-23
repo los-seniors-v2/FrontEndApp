@@ -1,11 +1,17 @@
 <script>
-import TreeTableFoodItem from './app/food-item/components/tree-table-food-item.component.vue';
-
-
-
-
+import {Food_Item} from "../model/food-item.entity.js";
+export default {
+  name: "food-item-3table",
+  props: {
+    article: {
+      type: Food_Item,
+      required: true
+    }
+  }
+}
 </script>
-<div>
+
+<template>
   <SelectButton v-model="filterMode" optionLabel="label" dataKey="label" :options="filterOptions" />
   <TreeTable :value="nodes" :filters="filters" :filterMode="filterMode.value">
     <template #header>
@@ -34,9 +40,7 @@ import TreeTableFoodItem from './app/food-item/components/tree-table-food-item.c
       </template>
     </Column>
   </TreeTable>
-</div>
-<template>
-  
+
 </template>
 
 <style scoped>
