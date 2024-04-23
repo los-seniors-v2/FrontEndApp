@@ -31,7 +31,7 @@ export default {
 <template>
   <div>
     <header>
-      <img :src="logo" alt="Startup Logo">
+      <img src="/src/assets/flexpal-logo.png" alt="Startup Logo">
       <input type="text" v-model="search" placeholder="Search">
     </header>
     <hr>
