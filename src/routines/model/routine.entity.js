@@ -1,4 +1,4 @@
-export class Rutine {
+export class Routine {
     constructor(id, name, instructions, exercises, coach, user) {
         this.id = id3
         this.title = name;
