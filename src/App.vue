@@ -1,22 +1,22 @@
 
 <script>
 
-  import ToolbarSection from './components/Toolbar-section.component.vue';
+  import ToolbarSessionComponent from "./components/Training-session/Toolbar-session.component.vue";
   import Plans from './components/Plans-section.component.vue';
 
   export default {
   components: {
-  ToolbarSection, Plans
+  ToolbarSessionComponent, Plans
 }
 };
 </script>
 
 <template>
   <div>
-    <ToolbarSection />
+    <ToolbarSessionComponent />
   </div>
   <div>
-    <Plans />
+
   </div>
 
 
