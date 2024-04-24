@@ -13,22 +13,22 @@ export default {
 </script>
 
 <template>
+  <Toast />
   <pv-card class="m-2">
     <template #header>
-      <img alt="Imagen de Rutina" src="" />
+      <img :alt="routine.title" :src="routine.image">
     </template>
-    <template #title>Advanced Card</template>
-    <template #subtitle>Card subtitle</template>
+    <template #title>{{routine.name}}</template>
+    <template #subtitle>{{ routine.category }}</template>
     <template #content>
       <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-        quas!
+        {{ routine.instructions }}
       </p>
     </template>
     <template #footer>
       <div class="flex gap-3 mt-1">
-        <Button label="Cancel" severity="secondary" outlined class="w-full" />
-        <Button label="Save" class="w-full" />
+        <pv-button label="Add routine" severity="secondary" outlined class="w-full" />
+        <pv-button label="I'm not interested" class="w-full" />
       </div>
     </template>
   </pv-card>
