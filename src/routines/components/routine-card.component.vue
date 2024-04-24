@@ -26,10 +26,8 @@ export default {
       </p>
     </template>
     <template #footer>
-      <div class="flex gap-3 mt-1">
-        <pv-button label="Add routine" severity="secondary" outlined class="w-full" />
-        <pv-button label="I'm not interested" class="w-full" />
-      </div>
+      <pv-button label="Add routine" severity="secondary" outlined class="w-full" />
+      <pv-button label="I'm not interested" class="w-full" />
     </template>
   </pv-card>
 </template>
