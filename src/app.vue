@@ -1,42 +1,30 @@
 <script>
-import TreeTableFoodItem from './app/food-item/components/tree-table-food-item.component.vue';
+import FoodItemCard from "/src/app/food-item/components/card-food-item.component.vue";
 
-
-
-
+export default {
+  name: "App",
+  components: {
+    FoodItemCard,
+  },
+  data() {
+    return {
+      foodItems: [],
+    };
+  },
+  created() {
+    fetch('/src/app/food-item/services/food-item-api.service.json')
+        .then(response => response.json())
+        .then(data => {
+          this.foodItems = data;
+        });
+  },
+};
 </script>
-<div>
-  <SelectButton v-model="filterMode" optionLabel="label" dataKey="label" :options="filterOptions" />
-  <TreeTable :value="nodes" :filters="filters" :filterMode="filterMode.value">
-    <template #header>
-      <div class="text-right">
-        <IconField iconPosition="left">
-          <InputIcon>
-            <i class="pi pi-search" />
-          </InputIcon>
-          <InputText v-model="filters['global']" placeholder="Global Search" />
-        </IconField>
-      </div>
-    </template>
-    <Column field="name" header="Name" expander>
-      <template #filter>
-        <InputText v-model="filters['name']" type="text" class="p-column-filter" placeholder="Filter by name" />
-      </template>
-    </Column>
-    <Column field="size" header="Size">
-      <template #filter>
-        <InputText v-model="filters['size']" type="text" class="p-column-filter" placeholder="Filter by size" />
-      </template>
-    </Column>
-    <Column field="type" header="Type">
-      <template #filter>
-        <InputText v-model="filters['type']" type="text" class="p-column-filter" placeholder="Filter by type" />
-      </template>
-    </Column>
-  </TreeTable>
-</div>
+
 <template>
-  
+  <div>
+    <FoodItemCard v-for="item in foodItems" :key="item.id" :item="item"/>
+  </div>
 </template>
 
 <style scoped>
