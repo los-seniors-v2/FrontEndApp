@@ -22,9 +22,9 @@ export default {
     <template #subtitle>{{ item.description }}</template>
     <template #content>
       <p class="m-0">
-        <strong>Calories:</strong> {{ item.calories }}
-        <strong>Fat total (g):</strong> {{ item.fat_total_g }}
-        <strong>Carbohydrates total (g):</strong> {{ item.carb_g }}
+        <strong>Calories:</strong> {{ item.calories }} <br>
+        <strong>Fat total (g):</strong> {{ item.fat_total_g }} <br>
+        <strong>Carbohydrates total (g):</strong> {{ item.carb_g }} <br>
         <strong>Protein (g):</strong> {{ item.protein_g }}
       </p>
     </template>
