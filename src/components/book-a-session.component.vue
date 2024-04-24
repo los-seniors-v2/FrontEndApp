@@ -1,5 +1,4 @@
 <script>
-import { CoachApiServices } from '../services/coach-api-services.js';
 import Calendar from 'primevue/calendar';
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
