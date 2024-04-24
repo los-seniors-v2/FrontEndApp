@@ -1,9 +1,9 @@
 export class Routine {
-    constructor(id, name, instructions, exercises, coach, user) {
+    constructor(id, name, instructions, category, image) {
         this.id = id
-        this.title = name;
+        this.name = name;
         this.instructions = instructions;
-        this.exercises = exercises;
-        this.coach = coach;
+        this.category = category;
+        this.image = image;
     }
 }
