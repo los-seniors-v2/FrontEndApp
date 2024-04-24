@@ -1,0 +1,28 @@
+{
+  "coaches": [
+    {
+      "id": 1,
+      "name": "Enrique Zapata",
+      "email": "eztrainer@gmail.com",
+      "photo": "https://scontent.cdninstagram.com/v/t39.30808-6/435678122_18426731911058021_8364736265046975641_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYzMDgwOCJ9&_nc_ht=scontent.cdninstagram.com&_nc_cat=105&_nc_ohc=69bGLERRU5gAb6yfPeP&edm=APs17CUAAAAA&ccb=7-5&ig_cache_key=MzM0NjM3NzQzMDkzNDIzMDMyOA%3D%3D.2-ccb7-5&oh=00_AfAYnbXQ3cSo5MMoJRRcjWZS9FhoDUaG9EOojUa0wLibmg&oe=662DD90D&_nc_sid=10d13b",
+      "trajectory": "NPC Peru champion 2023",
+      "knowledge": "Nutritionist and Certified trainer"
+    },
+    {
+      "id": 2,
+      "name": "Jorge Carrillo",
+      "email": "jctrainer@gmail.com",
+      "photo": "https://scontent.cdninstagram.com/v/t39.30808-6/393200801_18254370835203418_2371187796114197689_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYzMDgwOCJ9&_nc_ht=scontent.cdninstagram.com&_nc_cat=110&_nc_ohc=MyU93SuMNBgAb6QGDIE&edm=APs17CUAAAAA&ccb=7-5&ig_cache_key=MzIxNDkyNDI4ODUwNjExOTE3OQ%3D%3D.2-ccb7-5&oh=00_AfBJKSnofK5Iu4glcsw2J-AAtk2HV9eMVfhwJEWShPNR1g&oe=662BDE65&_nc_sid=10d13b",
+      "trajectory": "Texas Pro Show 2022 3rd place",
+      "knowledge": "Certified trainer"
+    },
+    {
+      "id": 3,
+      "name": "Angel Peña",
+      "email": "aptrainer@gmail.com",
+      "photo": "https://instagram.flim17-1.fna.fbcdn.net/v/t51.29350-15/311814303_173023885309978_6646233267941184955_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMzIweDE0ODkuc2RyLmYyOTM1MCJ9&_nc_ht=instagram.flim17-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=sumfauJlGvUAb5R_3uL&edm=AA5fTDYBAAAA&ccb=7-5&ig_cache_key=Mjk0OTc3ODg0ODMwNTgyNDc3OQ%3D%3D.2-ccb7-5&oh=00_AfCcoBgklETd4Oplbi_AkhJIdE6sytWQEWX9JoS8fDiEhA&oe=662BF47B&_nc_sid=cf751b",
+      "trajectory": "NPC Argentina Overall champion 2023",
+      "knowledge": "Certified trainer"
+    }
+  ]
+}
