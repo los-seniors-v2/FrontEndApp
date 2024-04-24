@@ -1,4 +1,4 @@
-import {createApp, onBeforeMount} from 'vue'
+import {createApp} from 'vue'
 import './style.css'
 import app from './app.vue'
 import PrimeVue from "primevue/config";
@@ -13,6 +13,7 @@ import SelectButton from "primevue/selectbutton";
 import Sidebar      from "primevue/sidebar";
 import Toolbar      from "primevue/toolbar";
 import Calendar from 'primevue/calendar';
+import Tag from "primevue/tag";
 
 createApp(app)
     .use(PrimeVue, {ripple: true})
@@ -25,5 +26,6 @@ createApp(app)
     .component('Sidebar', Sidebar)
     .component('Toolbar', Toolbar)
     .component('Calendar', Calendar)
+    .component('Tag', Tag)
     .mount('#app')
 
