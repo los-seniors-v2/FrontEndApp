@@ -7,7 +7,6 @@ import PrimeVue from "primevue/config";
 
 import 'primevue/resources/themes/aura-light-cyan/theme.css';
 import 'primevue/resources/primevue.min.css';
-
 import 'primeicons/primeicons.css';
 
 
@@ -23,6 +22,9 @@ import Toolbar      from "primevue/toolbar";
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
 import FloatLabel from 'primevue/floatlabel';
+import InputText from 'primevue/inputtext';
+import Calendar from 'primevue/calendar';
+
 
 const app = createApp(App);
 
@@ -38,7 +40,9 @@ app.use(PrimeVue, { ripple: true })
     .component('Toolbar', Toolbar)
     .component('Accordion', Accordion)
     .component('AccordionTab', AccordionTab)
-    .component('pv-floatLabel', FloatLabel);
+    .component('pv-floatLabel', FloatLabel)
+    .component('pv-input-text', InputText)
+    .component('pv-calendar', Calendar);
 // Mount the app
 app.mount('#app');
 
