@@ -22,6 +22,7 @@ import Menubar      from "primevue/menubar";
 import Toolbar      from "primevue/toolbar";
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
+import FloatLabel from 'primevue/floatlabel';
 
 const app = createApp(App);
 
@@ -36,7 +37,8 @@ app.use(PrimeVue, { ripple: true })
     .component('Menubar', Menubar)
     .component('Toolbar', Toolbar)
     .component('Accordion', Accordion)
-    .component('AccordionTab', AccordionTab);
+    .component('AccordionTab', AccordionTab)
+    .component('pv-floatLabel', FloatLabel);
 // Mount the app
 app.mount('#app');
 

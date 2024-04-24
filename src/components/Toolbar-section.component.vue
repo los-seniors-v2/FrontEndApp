@@ -15,7 +15,7 @@ export default {
 <template>
 
     <div class="card">
-      <Toolbar style=" padding: 1rem 1rem 1rem 1.5rem">
+      <Toolbar style=" padding: 1rem 1rem 1rem 1.5rem " >
         <template #start>
           <div class="flex ">
             <img src="/src/assets/flexpal-logo.png" height="60px" width="250px">
