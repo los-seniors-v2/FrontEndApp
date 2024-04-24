@@ -38,14 +38,14 @@ export default {
 
 <template>
   <div>
-    
-    <hr>
     <div class="coaches">
       <div class="coach" v-for="coach in coaches" :key="coach.id">
         <img :src="coach.photo" alt="Coach Photo" class="coach-photo">
-        <h2>{{ coach.name }}</h2>
-        <p>{{ coach.knowledge }}</p>
-        <p>Reach out for personalized guidance.</p>
+        <div>
+          <h2>{{ coach.name }}</h2>
+          <p>{{ coach.knowledge }}</p>
+          <p>Reach out for personalized guidance.</p>
+        </div>
       </div>
     </div>
     <h1 class="centered">Book a Training Session</h1>
@@ -62,5 +62,31 @@ export default {
 </template>
 
 <style>
-
+.coaches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.coach {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.coach-photo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+}
+.coach h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+.coach p {
+  margin: 0.2rem 0;
+  text-align: left;
+}
 </style>

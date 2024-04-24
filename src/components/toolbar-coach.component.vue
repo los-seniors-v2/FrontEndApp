@@ -54,7 +54,7 @@ export default {
 .input {
   margin-left: 70rem;
   padding: 0.5rem;
-  padding-right: 2rem; /* Add space for the search icon */
+  padding-right: 2rem; 
   border-radius: 0.5rem;
   border: 1px solid #ccc;
   width: 14rem;
