@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import Calendar from 'primevue/calendar';
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
@@ -18,13 +19,21 @@ export default {
     Calendar
   },
   created() {
-    const api = new CoachApiServices();
-    api.getAll().then(response => {
-      this.coaches = response.data;
-    });
+    this.fetchCoaches();
+  },
+  methods: {
+    fetchCoaches() {
+      axios.get("/src/services/coach-api.service.json")
+          .then(response => {
+            console.log(response.data);
+            this.coaches = response.data.coaches;
+          })
+          .catch(error => {
+            console.error('Error fetching coaches:', error);
+          });
+    }
   }
 };
-
 </script>
 
 <template>
