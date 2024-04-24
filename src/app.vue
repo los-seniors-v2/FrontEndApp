@@ -1,21 +1,15 @@
 <script>
 
 import {defineComponent} from "vue";
-import RoutineCard from "./routines/components/routine-card.component.vue";
+import RoutineList from "./routines/components/routine-list.component.vue";
 
 export default defineComponent({
-  components: {RoutineCard}
+  components: {RoutineList}
 })
 </script>
 
 <template>
-  <div>
-
-  </div>
-  <div>
-
-  </div>
-
+  <RoutineList />
 </template>
 
 <style scoped>
