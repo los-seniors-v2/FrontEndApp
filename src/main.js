@@ -24,7 +24,7 @@ import AccordionTab from 'primevue/accordiontab';
 import FloatLabel from 'primevue/floatlabel';
 import InputText from 'primevue/inputtext';
 import Calendar from 'primevue/calendar';
-
+import Panel from 'primevue/panel';
 
 const app = createApp(App);
 
@@ -42,7 +42,8 @@ app.use(PrimeVue, { ripple: true })
     .component('AccordionTab', AccordionTab)
     .component('pv-floatLabel', FloatLabel)
     .component('pv-input-text', InputText)
-    .component('pv-calendar', Calendar);
+    .component('pv-calendar', Calendar)
+    .component('pv-panel', Panel);
 // Mount the app
 app.mount('#app');
 
