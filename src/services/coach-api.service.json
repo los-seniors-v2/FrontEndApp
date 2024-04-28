@@ -2,11 +2,11 @@
   "coaches": [
     {
       "id": 1,
-      "name": "Enrique Zapata",
+      "name": "Ricardo Elias",
       "email": "eztrainer@gmail.com",
       "photo": "https://scontent.cdninstagram.com/v/t39.30808-6/435678122_18426731911058021_8364736265046975641_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYzMDgwOCJ9&_nc_ht=scontent.cdninstagram.com&_nc_cat=105&_nc_ohc=69bGLERRU5gAb6yfPeP&edm=APs17CUAAAAA&ccb=7-5&ig_cache_key=MzM0NjM3NzQzMDkzNDIzMDMyOA%3D%3D.2-ccb7-5&oh=00_AfAYnbXQ3cSo5MMoJRRcjWZS9FhoDUaG9EOojUa0wLibmg&oe=662DD90D&_nc_sid=10d13b",
       "trajectory": "NPC Peru champion 2023",
-      "knowledge": "Nutritionist and Certified trainer"
+      "knowledge": "Certified trainer"
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "id": 3,
       "name": "Angel Peña",
       "email": "aptrainer@gmail.com",
-      "photo": "https://instagram.flim17-1.fna.fbcdn.net/v/t51.29350-15/311814303_173023885309978_6646233267941184955_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMzIweDE0ODkuc2RyLmYyOTM1MCJ9&_nc_ht=instagram.flim17-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=sumfauJlGvUAb5R_3uL&edm=AA5fTDYBAAAA&ccb=7-5&ig_cache_key=Mjk0OTc3ODg0ODMwNTgyNDc3OQ%3D%3D.2-ccb7-5&oh=00_AfCcoBgklETd4Oplbi_AkhJIdE6sytWQEWX9JoS8fDiEhA&oe=662BF47B&_nc_sid=cf751b",
+      "photo": "https://scontent-lhr6-1.cdninstagram.com/v/t39.30808-6/428656726_18013250789330930_1395411997954786246_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYzMDgwOCJ9&_nc_ht=scontent-lhr6-1.cdninstagram.com&_nc_cat=102&_nc_ohc=mh-njFyHBJgAb5Z1KsO&edm=APs17CUAAAAA&ccb=7-5&ig_cache_key=MzMxMjg4MDg4NDQ1NzQ4MjY4OA%3D%3D.2-ccb7-5&oh=00_AfBVfk2xCQ60DTVKqzQfRIYrkaotnfsDsuW4Taw5Zm2BzQ&oe=662F47B2&_nc_sid=10d13b",
       "trajectory": "NPC Argentina Overall champion 2023",
       "knowledge": "Certified trainer"
     }
