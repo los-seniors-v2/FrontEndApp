@@ -41,18 +41,17 @@ export default {
 .flex {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 90vw;
 }
 
 .input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: auto;
 }
 
 .input {
-  margin-left: 70rem;
   padding: 0.5rem;
   padding-right: 2rem; 
   border-radius: 0.5rem;
