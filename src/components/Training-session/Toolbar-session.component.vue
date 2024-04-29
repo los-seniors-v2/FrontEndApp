@@ -3,7 +3,7 @@ import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
 
 export default {
-  name: "ToolbarSection",
+  name: "ToolbarSession",
   components: {
     Button,
     Toolbar
@@ -14,18 +14,18 @@ export default {
 
 <template>
 
-    <div class="card">
-      <Toolbar style=" padding: 1rem 1rem 1rem 1.5rem " >
-        <template #start>
-          <div class="flex ">
-            <img src="/src/assets/flexpal-logo.png" height="60px" width="250px">
-            <span >Membership</span>
-          </div>
-        </template>
+  <div class="card">
+    <Toolbar style=" padding: 1rem 1rem 1rem 1.5rem">
+      <template #start>
+        <div class="flex ">
+          <img src="/src/assets/flexpal-logo.png" height="60px" width="250px">
+          <span >Video Call with Trainer </span>
+        </div>
+      </template>
 
-      </Toolbar>
+    </Toolbar>
 
-    </div>
+  </div>
 
 </template>
 
