@@ -1,34 +1,31 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
-
-// Add PrimeVue UI Library
+import app from './app.vue'
 import PrimeVue from "primevue/config";
-
-
-// Add icons for app
+import DialogService from "primevue/dialogservice";
+import ConfirmationService from "primevue/confirmationservice";
+import ToastService from "primevue/toastservice";
 import 'primeicons/primeicons.css';
-
-
-
-// Add PrimeVue components
-import Button from "primevue/button";
+// Add UI Components for application
+import Button       from "primevue/button";
+import Card         from "primevue/card";
 import SelectButton from "primevue/selectbutton";
-import Sidebar from "primevue/sidebar";
-import Avatar from "primevue/avatar";
-import Menu from "primevue/menu";
-import Calendar from "primevue/calendar";
+import Sidebar      from "primevue/sidebar";
+import Toolbar      from "primevue/toolbar";
+import Calendar from 'primevue/calendar';
+import Tag from "primevue/tag";
 
-// Create app instance
-const app = createApp(App);
+createApp(app)
+    .use(PrimeVue, {ripple: true})
+    .use(DialogService)
+    .use(ConfirmationService)
+    .use(ToastService)
+    .component('Button', Button)
+    .component('Card', Card)
+    .component('pv-select-Button', SelectButton)
+    .component('Sidebar', Sidebar)
+    .component('Toolbar', Toolbar)
+    .component('Calendar', Calendar)
+    .component('Tag', Tag)
+    .mount('#app')
 
-// Add configuration for PrimeVue Plugin and components
-app.use(PrimeVue, { ripple: true })
-    .component('pv-button', Button)
-    .component('pv-select-button', SelectButton)
-    .component('pv-sidebar', Sidebar)
-    .component('pv-avatar', Avatar)
-    .component('pv-menu', Menu)
-    .component('pv-calendar', Calendar); // Usa el componente Calendar aquí
-
-app.mount('#app');

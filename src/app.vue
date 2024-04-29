@@ -8,5 +8,3 @@ import CalenderComponent from './calenders/components/calender.component.vue'
   <calender-component />
 
 </template>
-
-
