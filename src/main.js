@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
-import app from './app.vue'
+import App from './app.vue'
 import PrimeVue from "primevue/config";
 import DialogService from "primevue/dialogservice";
 import ConfirmationService from "primevue/confirmationservice";
@@ -22,8 +22,9 @@ import Menubar      from "primevue/menubar";
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
 
-createApp(app)
-    .use(PrimeVue, {ripple: true})
+const app = createApp(App);
+
+app.use(PrimeVue, { ripple: true })
     .use(DialogService)
     .use(ConfirmationService)
     .use(ToastService)
@@ -39,5 +40,6 @@ createApp(app)
     .component('Menubar', Menubar)
     .component('Accordion', Accordion)
     .component('AccordionTab', AccordionTab)
-    .mount('#app')
+
+app.mount('#app');
 
