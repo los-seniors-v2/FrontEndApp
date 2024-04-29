@@ -7,7 +7,6 @@ import DialogService from "primevue/dialogservice";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
 
-import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import 'primevue/resources/primevue.min.css';
 
