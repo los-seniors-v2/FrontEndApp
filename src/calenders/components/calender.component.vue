@@ -1,19 +1,28 @@
-<script>
-export default {
-  name: "calender.component"
-}
+<script setup>
+import { ref } from "vue";
+import Calendar from "primevue/calendar";
+
+const datedisplay = ref();
+const timedisplay = ref();
 </script>
 
+
 <template>
-  <Calendar v-model="buttondisplay" showIcon :showOnFocus="false" />
-  <Calendar v-model="icondisplay" showIcon iconDisplay="input" />
-  <Calendar v-model="templatedisplay" showIcon iconDisplay="input" timeOnly>
-    <template #inputicon="{ clickCallback }">
-      <InputIcon class="pi pi-clock cursor-pointer" @click="clickCallback" />
-    </template>
-  </Calendar>
+  <div class="card flex flex-wrap gap-3 p-fluid">
+    <div class="flex-auto">
+      <label for="datedisplay" class="font-bold block mb-2"> Date </label>
+      <Calendar v-model="datedisplay" showIcon :showOnFocus="false" inputId="datedisplay" class="my-calendar"/>
+    </div>
+    <div class="flex-auto">
+      <label for="timedisplay" class="font-bold block mb-2"> Time </label>
+      <Calendar v-model="timedisplay" showIcon iconDisplay="input" timeOnly inputId="timedisplay">
+        <template #inputicon="{ clickCallback }">
+          <InputIcon class="pi pi-clock cursor-pointer" @click="clickCallback" />
+        </template>
+      </Calendar>
+    </div>
+  </div>
+
+
 </template>
 
-<style scoped>
-
-</style>
