@@ -18,6 +18,9 @@ import Toolbar      from "primevue/toolbar";
 import Calendar from 'primevue/calendar';
 import Tag from "primevue/tag";
 import InputText from 'primevue/inputtext';
+import Menubar      from "primevue/menubar";
+import Accordion from 'primevue/accordion';
+import AccordionTab from 'primevue/accordiontab';
 
 createApp(app)
     .use(PrimeVue, {ripple: true})
@@ -33,5 +36,8 @@ createApp(app)
     .component('Tag', Tag)
     .component('pv-InputText', InputText)
     .component('pv-button', Button)
+    .component('Menubar', Menubar)
+    .component('Accordion', Accordion)
+    .component('AccordionTab', AccordionTab)
     .mount('#app')
 
