@@ -5,7 +5,10 @@ import PrimeVue from "primevue/config";
 import DialogService from "primevue/dialogservice";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
+
+import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
+
 // Add UI Components for application
 import Button       from "primevue/button";
 import Card         from "primevue/card";
@@ -14,6 +17,7 @@ import Sidebar      from "primevue/sidebar";
 import Toolbar      from "primevue/toolbar";
 import Calendar from 'primevue/calendar';
 import Tag from "primevue/tag";
+import InputText from 'primevue/inputtext';
 
 createApp(app)
     .use(PrimeVue, {ripple: true})
@@ -27,5 +31,7 @@ createApp(app)
     .component('Toolbar', Toolbar)
     .component('Calendar', Calendar)
     .component('Tag', Tag)
+    .component('pv-InputText', InputText)
+    .component('pv-button', Button)
     .mount('#app')
 

@@ -1,10 +1,20 @@
-<script setup>
+<script >
+import RegistrationProcess from "./components/coach-registration/registration-process.component.vue";
+export default {
+  components: {
+    RegistrationProcess
+  }
 
-import CalenderComponent from './calenders/components/calender.component.vue'
+}
 </script>
 
 <template>
-
-  <calender-component />
+  <div>
+    <RegistrationProcess></RegistrationProcess>
+  </div>
 
 </template>
+
+<style scoped>
+
+</style>
