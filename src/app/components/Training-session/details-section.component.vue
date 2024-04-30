@@ -54,7 +54,7 @@ const time = ref();
 <style >
 h2{
   font-size: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .details_card{
   display:flex;

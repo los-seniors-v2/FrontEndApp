@@ -1,19 +1,8 @@
 <script setup>
 import Card from "primevue/card";
-import FloatLabel from "primevue/floatlabel";
-import InputText from "primevue/inputtext";
 import { ref } from 'vue';
 
 const value = ref(null);
-
-// export default {
-//   name: "QuestionSection",
-//   components: {
-//     Card,
-//     FloatLabel,
-//     InputText
-//   }
-// }
 </script>
 
 <template>
@@ -48,7 +37,7 @@ const value = ref(null);
 <style scoped >
 h2{
 font-size: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 </style>
