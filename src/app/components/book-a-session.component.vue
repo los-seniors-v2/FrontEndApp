@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     fetchCoaches() {
-      axios.get("/src/services/coach-api.service.json")
+      axios.get("src/app/services/coach-api.service.json")
           .then(response => {
             console.log(response.data);
             this.coaches = response.data.coaches;
