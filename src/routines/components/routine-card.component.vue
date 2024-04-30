@@ -14,7 +14,7 @@ export default {
 
 <template>
   <Toast />
-  <pv-card class="m-2">
+  <Card class="m-2">
     <template #header>
       <img :alt="routine.title" :src="routine.image">
     </template>
@@ -29,5 +29,5 @@ export default {
       <pv-button label="Add routine" severity="secondary" outlined class="w-full" />
       <pv-button label="I'm not interested" class="w-full" />
     </template>
-  </pv-card>
+  </Card>
 </template>
