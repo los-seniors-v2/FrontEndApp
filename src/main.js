@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
+import app1 from './app.vue'
 
 import PrimeVue from "primevue/config";
 import DialogService from "primevue/dialogservice";
@@ -9,7 +9,7 @@ import ToastService from "primevue/toastservice";
 
 import 'primeicons/primeicons.css';
 import 'primevue/resources/primevue.min.css';
-
+import router from "./router/index.js";
 
 // Add UI Components for application
 import Button       from "primevue/button";
@@ -26,7 +26,7 @@ import AccordionTab from 'primevue/accordiontab';
 import Panel from 'primevue/panel';
 import FloatLabel from 'primevue/floatlabel';
 
-const app = createApp(App);
+const app = createApp(app1);
 
 app.use(PrimeVue, { ripple: true })
     .use(DialogService)
@@ -45,7 +45,7 @@ app.use(PrimeVue, { ripple: true })
     .component('Accordion', Accordion)
     .component('AccordionTab', AccordionTab)
     .component('pv-floatLabel', FloatLabel)
-    .component('pv-panel', Panel);
-
+    .component('pv-panel', Panel)
+    .use(router);
 app.mount('#app');
 
