@@ -1,7 +1,12 @@
-<script setup>
+<script>
 import Card from "primevue/card";
 import Button from "primevue/button";
 import Panel from 'primevue/panel';
+import Toolbar from "primevue/toolbar";
+
+export default {
+  name: "Guidelines",
+};
 
 </script>
 
