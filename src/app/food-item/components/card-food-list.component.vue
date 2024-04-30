@@ -1,0 +1,76 @@
+<script>
+import HeaderContent from "../../public/components/header/header-content.component.vue";
+import FoodItemCard from "./card-food-item.component.vue";
+
+export default {
+  name: "card-food-list",
+  components: {FoodItemCard, HeaderContent},
+  data() {
+    return {
+      foodItems: [],
+      page: 0,
+      itemsPerPage: 7,
+    };
+  },
+  computed: {
+    pagedItems() {
+      const start = this.page * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.foodItems.slice(start, end);
+    },
+  },
+  methods: {
+    nextPage() {
+      if ((this.page + 1) * this.itemsPerPage < this.foodItems.length) {
+        this.page++;
+      }
+    },
+    prevPage() {
+      if (this.page > 0) {
+        this.page--;
+      }
+    },
+  },
+  created() {
+    fetch('/src/app/food-item/services/food-item-api.service.json')
+        .then(response => response.json())
+        .then(data => {
+          this.foodItems = data;
+        });
+  },
+}
+</script>
+
+<template>
+  <div id="header" >
+    <HeaderContent />
+  </div>
+  <div id="app-container">
+    <button class="arrow-button" @click="prevPage" v-if="page > 0">← Previous</button>
+    <FoodItemCard v-for="item in pagedItems" :key="item.id" :item="item"/>
+    <button class="arrow-button" @click="nextPage" v-if="(page + 1) * itemsPerPage < foodItems.length">Next →</button>
+  </div>
+  <Footer/>
+</template>
+
+<style scoped>
+#app-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 200px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.arrow-button {
+  font-size: 1.5em;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #000000;
+}
+</style>
