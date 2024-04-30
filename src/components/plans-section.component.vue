@@ -10,7 +10,7 @@ export default {
 
     <Card style="width: 25rem; overflow: hidden; margin-right:3em; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
       <template #header>
-        <img alt="user header" src="/src/assets/img_test.jpeg"/>
+        <img alt="user header" src="/src/assets/images/img_test.jpeg"/>
       </template>
       <template #title>Test Plan</template>
       <template #content>
@@ -30,7 +30,7 @@ export default {
 
   <Card style="width: 25rem; overflow: hidden; margin-right:3em; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  ">
     <template #header>
-      <img alt="user header" src="/src/assets/img_mensual.jpeg"/>
+      <img alt="user header" src="/src/assets/images/img_mensual.jpeg"/>
     </template>
     <template #title>Monthly Plan</template>
     <template #content>
@@ -49,7 +49,7 @@ export default {
 
   <Card style="width: 25rem; overflow: hidden; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     <template #header>
-      <img alt="user header" src="/src/assets/img_anual.jpeg"/>
+      <img alt="user header" src="/src/assets/images/img_anual.jpeg"/>
     </template>
     <template #title>Annual Plan</template>
     <template #content>

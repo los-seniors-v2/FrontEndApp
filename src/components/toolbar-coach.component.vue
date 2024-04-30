@@ -17,7 +17,7 @@ export default {
     <Toolbar style=" padding: 1rem 1rem 1rem 1.5rem">
       <template #start>
         <div class="flex ">
-          <img src="/src/assets/flexpal-logo.png" height="60px" width="250px">
+          <img src="/src/assets/images/flexpal-logo.png" height="60px" width="250px">
           <div class="input-wrapper">
             <input class="input" type="text" v-model="search" placeholder="Search in site">
             <i class="pi pi-search"></i>

@@ -39,7 +39,7 @@
       <Toolbar class="bg-primary" fixed>
         <template #start>
           <a href="/home">
-          <img src="/src/assets/flexpal-logo.png" height="60px" width="250px" alt="flexpal logo">
+          <img src="/src/assets/images/flexpal-logo.png" height="60px" width="250px" alt="flexpal logo">
           </a>
         </template>
         <template #end>
