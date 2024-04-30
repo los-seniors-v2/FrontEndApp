@@ -1,6 +1,4 @@
 <script>
-import InputText  from "primevue/inputtext";
-import Button from "primevue/button";
 import axios from "axios";
 export default {
   name: "RegistrationProcess",
@@ -26,10 +24,6 @@ export default {
     // Se llama al método fetchCoaches cuando el componente se monta
     this.fetchCoaches();
   },
-  components: {
-    InputText,
-    Button
-  }
 }
 
 </script>
@@ -40,7 +34,7 @@ export default {
   <div class="container1">
     <h1>Coach Registration</h1>
     <div class="card">
-      <InputText type="text" v-model="value" placeholder="Enter your details" style="width:320px; " />
+      <InputText type="text" v-model="value" placeholder="Enter your details" style="width:320px" />
     </div>
     <div class="button">
       <Button label="Submit" />
@@ -49,7 +43,7 @@ export default {
 
   <div class="container2">
     <h1>Verification Process</h1>
-    <p>Comeplete the verification steps below</p>
+    <p>Complete the verification steps below</p>
     <div class="card" >
       <label for="image" style="font-weight:bold">Certified Image</label>
       <InputText id="image"  placeholder="Upload certified"  style="width:520px; " />
@@ -64,7 +58,7 @@ export default {
       </div>
       <div class="profile-info">
         <h1>{{ coach.name }}</h1>
-        <spam class="certified-trainer">{{ coach.knowledge }}</spam>
+        <span class="certified-trainer">{{ coach.knowledge }}</span>
         <p class="profile-setup">Profile setup required</p>
       </div>
       <button class="edit-profile-btn">Edit Profile</button>
