@@ -1,12 +1,6 @@
 <script >
-import Card from "primevue/card";
-
-
 export default {
   name: "Plans",
-  components: {
-    Card
-  }
 };
 
 </script>
