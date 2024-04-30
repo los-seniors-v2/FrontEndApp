@@ -12,5 +12,8 @@ export default {
 </template>
 
 <style scoped>
-
+.header{
+  color: Black;
+  margin-left: 750px;
+}
 </style>

@@ -11,7 +11,7 @@ export default {
     };
   },
   created() {
-    fetch('src/routines/services/routines-api.service.json')
+    fetch('src/app/routines/services/routines-api.service.json')
         .then(response => response.json())
         .then(data => {
           this.routines = data;

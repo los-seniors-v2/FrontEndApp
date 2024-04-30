@@ -57,26 +57,28 @@ export default {
 </template>
 
 <style >
-/*Panel Styles */
+.card{
+  color: black;
+}
 .right-panel {
   display: flex;
   order: 1;
 }
 .header-content {
   display: flex;
-  align-items: center; /* Esto alinea verticalmente los elementos al centro */
+  align-items: center;
 }
 .header-image {
-  width: 100px; /* Ajusta esto a la anchura que desees para tu imagen */
-  height: 100px; /* Ajusta esto a la altura que desees para tu imagen */
-  margin-right: 10px; /* Esto añade un poco de espacio a la derecha de la imagen */
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
 }
 .header-text {
   display: flex;
   flex-direction: column;
 }
 .header-text p {
-  margin-top: -15px; /* Esto eliminará el margen superior del título */
+  margin-top: -15px;
 }
 
 
