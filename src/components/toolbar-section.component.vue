@@ -18,7 +18,7 @@ export default {
       <Toolbar style=" padding: 1rem 1rem 1rem 1.5rem " >
         <template #start>
           <div class="flex ">
-            <img src="/src/assets/flexpal-logo.png" height="60px" width="250px">
+            <img src="/src/assets/flexpal-logo.png" height="60px" width="250px" alt="flexpal logo">
             <span >Membership</span>
           </div>
         </template>
