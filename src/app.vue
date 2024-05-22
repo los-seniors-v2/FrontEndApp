@@ -34,7 +34,7 @@
 </script>
 
 <template>
-  <toolbar/>
+
    <router-view/>
 </template>
 
