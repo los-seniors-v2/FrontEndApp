@@ -1,6 +1,6 @@
 <script>
-import FoodItemList from '../food-item/components/card-food-list.component.vue'
-import CalenderComponent from '../calenders/components/calender.component.vue'
+import FoodItemList from '../../nutrition/components/card-food-list.component.vue'
+import CalenderComponent from '../../OLD FILES/app/calenders/components/calender.component.vue'
 export default {
   name: "home-section",
   components: {
@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .banner {
   align-items: center;
-  background-image: url('../../../assets/images/banner-flexpal.png');
+  background-image: url('../../assets/images/banner-flexpal.png');
 }
 .coach-programming{
   text-align: center;

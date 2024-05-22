@@ -1,10 +1,10 @@
 <script>
 
-  /*import ToolbarSessionComponent from "./components/Training-session/toolbar-session.component.vue";
-  import QuestionSection from "./components/Training-session/question-section.component.vue";
-  import DetailsSection from "./components/Training-session/details-section.component.vue";
-  import TrainerSection from "./components/Training-session/trainer-section.component.vue";
-  import GuidelinesSection from "./components/Training-session/guidelines-section.component.vue";
+  /*import ToolbarSessionComponent from "./components/training-session/toolbar-session.component.vue";
+  import QuestionSection from "./components/training-session/question-section.component.vue";
+  import DetailsSection from "./components/training-session/details-section.component.vue";
+  import TrainerSection from "./components/training-session/trainer-section.component.vue";
+  import GuidelinesSection from "./components/training-session/guidelines-section.component.vue";
 
   export default {
       components: {
