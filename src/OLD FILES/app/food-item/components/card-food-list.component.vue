@@ -1,5 +1,5 @@
 <script>
-import HeaderContent from "../../public/components/header/header-content.component.vue";
+import HeaderContent from "../../../../public/components/header/header-content.component.vue";
 import FoodItemCard from "./card-food-item.component.vue";
 
 export default {

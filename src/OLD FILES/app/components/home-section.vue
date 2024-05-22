@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .banner {
   align-items: center;
-  background-image: url('../../assets/images/banner-flexpal.png');
+  background-image: url('../../../assets/images/banner-flexpal.png');
 }
 .coach-programming{
   text-align: center;

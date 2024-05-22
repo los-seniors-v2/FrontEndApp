@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory} from "vue-router";
-import RoutineList from "../app/routines/components/routine-list.component.vue"
-import Plans from "../app/components/plans-section.component.vue"
-import BookASessionComponent from "../app/components/book-a-session.component.vue";
-import HomeSection from "../app/components/home-section.vue";
+import RoutineList from "../routines/components/routine-list.component.vue"
+import Plans from "../OLD FILES/app/components/plans-section.component.vue"
+import BookASessionComponent from "../OLD FILES/app/components/book-a-session.component.vue";
+import HomeSection from "../OLD FILES/app/components/home-section.vue";
 
 const router = createRouter({
     history: createWebHistory(),
