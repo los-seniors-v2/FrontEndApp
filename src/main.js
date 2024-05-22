@@ -46,6 +46,7 @@ app.use(PrimeVue, { ripple: true })
     .component('AccordionTab', AccordionTab)
     .component('pv-floatLabel', FloatLabel)
     .component('pv-panel', Panel)
+    .component('pv-toolbar', Toolbar)
     .use(router);
 app.mount('#app');
 

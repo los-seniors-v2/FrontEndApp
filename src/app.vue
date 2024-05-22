@@ -34,26 +34,8 @@
 </script>
 
 <template>
-  <Toast/>
-    <header>
-      <Toolbar class="bg-primary" fixed>
-        <template #start>
-          <a href="/home">
-          <img src="/src/assets/images/flexpal-logo.png" height="60px" width="250px" alt="flexpal logo">
-          </a>
-        </template>
-        <template #end>
-          <div class="flex-column">
-            <router-link v-for="item in items" :key="item.label" v-slot="{navigate, href}" :to="item.to" custom>
-              <pv-button :href="href" class="p-button-text text-white" @click="navigate">{{ item.label }}</pv-button>
-            </router-link>
-          </div>
-        </template>
-      </Toolbar>
-    </header>
-  <main>
-    <router-view/>
-  </main>
+  <toolbar/>
+   <router-view/>
 </template>
 
 
