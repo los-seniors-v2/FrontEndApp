@@ -4,6 +4,8 @@ import Plans from "../subscription/pages/plans-section.component.vue"
 import BookASessionComponent from "../counseling/pages/book-a-session.component.vue";
 import HomeSection from "../nutrition/pages/home-section.vue";
 import HomeComponent from "../public/pages/home.component.vue";
+import SidebarComponent from "../profiles/components/sidebar.component.vue";
+import ProfileComponent from "../profiles/model/pages/profile.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -17,6 +19,7 @@ const router = createRouter({
 
          */
         {path: '/home', component: HomeComponent},
+        {path: '/profile', component: ProfileComponent}
     ]
 });
 

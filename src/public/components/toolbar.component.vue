@@ -44,8 +44,7 @@ export default {
           </Button>
         </li>
       </ul>
-<!--      <pv-InputText type="text" v-model="value" />-->
-<!--      <span class="pi pi-search"></span>-->
+
     </template>
   </pv-toolbar>
 
