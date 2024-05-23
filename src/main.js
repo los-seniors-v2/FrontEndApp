@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
-import app1 from './app.vue'
+import App from './app.vue'
 
 import PrimeVue from "primevue/config";
 import DialogService from "primevue/dialogservice";
@@ -26,7 +26,7 @@ import AccordionTab from 'primevue/accordiontab';
 import Panel from 'primevue/panel';
 import FloatLabel from 'primevue/floatlabel';
 
-const app = createApp(app1);
+const app = createApp(App);
 
 app.use(PrimeVue, { ripple: true })
     .use(DialogService)
