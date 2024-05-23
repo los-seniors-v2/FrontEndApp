@@ -13,11 +13,39 @@ export default {
         <img src="../../assets/images/flexpal-logo.png" alt="Flex Pal Logo" style="width: 350px; height: 70px;"/>
     </template>
 
-    <template #end >
-      <div class="input">
-      <pv-InputText type="text" v-model="value" class="inner_input" placeholder="Search in site"/>
-      <span class="pi pi-search" style="font-size: 1.5rem"></span>
-      </div>
+
+
+    <template #end>
+      <ul class="list-none p-0 m-0 overflow-hidden" style="display:flex; ">
+        <li>
+          <Button>
+            <a href="/home"> Home </a>
+          </Button>
+
+        </li>
+        <li>
+          <Button>
+            <a href="/routines"> Routines </a>
+          </Button>
+        </li>
+        <li>
+          <Button>
+            <a href="/nutrition"> Nutrition </a>
+          </Button>
+        </li>
+        <li>
+          <Button>
+            <a href="/book_section"> Book Session </a>
+          </Button>
+        </li>
+        <li>
+          <Button>
+            <a href="/profie"> Profile </a>
+          </Button>
+        </li>
+      </ul>
+<!--      <pv-InputText type="text" v-model="value" />-->
+<!--      <span class="pi pi-search"></span>-->
     </template>
   </pv-toolbar>
 
@@ -33,20 +61,17 @@ export default {
     list-style-type: none;
     display: inline;
     padding: 10px;
-  }
-  .input{
-    border:2px solid gray;
-    border-radius: 10px;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    .inner_input{
-      border:none;
-      outline: none;
-      margin-right: 5px;
-      background-color: transparent;
+    Button{
+      background-color: #6baada;
+      border-radius: 10px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
     }
+
   }
+
 
 }
 </style>
