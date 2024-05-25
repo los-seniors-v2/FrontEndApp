@@ -39,22 +39,26 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-content-center flex-column">
-    <div>
-      <div class="flex justify-content-center">
-        <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:500px" />
+  <div class="flex justify-content-center">
+  <div class="surface-card  shadow-2 border-round">
+    <div class="flex justify-content-center ">
+      <div>
+        <div class="flex justify-content-center">
+          <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:500px" />
+        </div>
+        <h2 class="flex justify-content-center">Register</h2>
       </div>
-      <h2 class="flex justify-content-center">Register</h2>
+    </div>
+
+    <form-register @form-submitted="createUser" ></form-register>
+
+    <div class="flex flex-column justify-content-center align-items-center">
+      <h2 class="m-2">Complete the verification steps below</h2>
+      <h4 class="mt-0 mb-4">upload certificate or extra documentation</h4>
+      <file-upload-content></file-upload-content>
+      <p>already have an account?<a>Sign in</a></p>
     </div>
   </div>
-
-  <form-register @form-submitted="createUser" ></form-register>
-
-  <div class="flex flex-column justify-content-center align-items-center">
-    <h2 class="m-2">Complete the verification steps below</h2>
-    <h4 class="mt-0 mb-4">upload certificate or extra documentation</h4>
-    <file-upload-content></file-upload-content>
-    <p>already have an account?<a>Sign in</a></p>
   </div>
 
 </template>

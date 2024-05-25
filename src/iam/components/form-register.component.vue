@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-content-center align-items-center h-full">
+  <div class="flex justify-content-center align-items-center ">
     <form @submit.prevent="submitForm"  class="flex flex-column" >
       <pv-InputGroup class="mb-4 mt-5">
         <label class="px-5 w-4" for="firstname">Firstname</label>
