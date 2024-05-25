@@ -20,7 +20,7 @@ const router = createRouter({
 
          */
         {path: '/home', component: HomeComponent},
-        {path: '/profile', component: ProfileComponent},
+        {path: '/profile-coach', component: ProfileComponent},
         {path: '/profile-member', component: ProfileMemberComponent}
     ]
 });

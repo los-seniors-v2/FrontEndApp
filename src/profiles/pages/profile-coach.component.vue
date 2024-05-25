@@ -9,6 +9,8 @@ export default {
   data() {
     return {
       exercises: [],
+      showExercisePanel: false,
+      showNutritionPanel: false,
     }
   },
   created() {
@@ -19,7 +21,15 @@ export default {
       http.get().then(response => {
         this.exercises = response.data;
       });
-    }
+    },
+    showExercise() {
+      this.showExercisePanel = true;
+      this.showNutritionPanel = false;
+    },
+    showNutrition() {
+      this.showExercisePanel = false;
+      this.showNutritionPanel = true;
+    },
   }
 }
 </script>
@@ -30,17 +40,59 @@ export default {
 
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>
+      <!-- Profile of coach here -->
+      <div class="coach-profile">
+      <pv-avatar image="https://cdn.static.aptavs.com/imagenes/cuanto-cuesta-ser-entrenador-personal/cuanto-cuesta-ser-entrenador-personal_905x603.jpg" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
+        <h1>Coach Name</h1>
+        <p>Coach Description</p>
+      </div>
     </div>
     <div class="container2">
       <div class="left_side">
-        <h1>Your Workout Plan</h1>
+        <h1 style="margin-top: 35%">Your Workout Plan</h1>
         <div>
-          <Button>Exercise</Button>
-          <Button>Nutrition</Button>
+          <Button @click="showExercise">Exercise</Button>
+          <Button @click="showNutrition">Nutrition</Button>
         </div>
       </div>
-      <div style="border:3px solid black">
-<!--        AQUI PONER INFORMACION DE API-->PONER INFO DE API
+
+      <div v-if="showExercisePanel">
+        <pv-panel class="exercise-panel">
+
+          <template #header >
+            <div class="header-info">
+              <img src="../../../src/assets/images/muscle-icon.png" alt="routines" style="width: 50px; height: 50px;margin-left: 45%"/>
+              <h2 style="margin-left: 5%;white-space: nowrap;">Exercise Information</h2>
+            </div>
+          </template>
+
+          <div>
+            <p> API<br> API </p>
+          </div>
+
+          <template #footer>
+            <Button style="margin-left: 38%">View More</Button>
+          </template>
+        </pv-panel>
+      </div>
+
+      <div v-if="showNutritionPanel">
+        <pv-panel class="nutrition-panel">
+          <template #header>
+            <div class="header-info">
+              <img src="https://cdn-icons-png.flaticon.com/512/1625/1625042.png" alt="nutrition" style="width: 50px; height: 50px;margin-left: 45%"/>
+              <h2 style="margin-left: 5%;white-space: nowrap;">Nutrition Plans </h2>
+            </div>
+          </template>
+
+          <div>
+            <p>API <br> API </p>
+          </div>
+
+          <template #footer>
+            <Button style="margin-left: 38%">View More</Button>
+          </template>
+        </pv-panel>
       </div>
 
     </div>
@@ -132,7 +184,7 @@ export default {
     width: 80%;
     height: 100px;
     .day{
-      margin-top:0px;
+      margin-top:0;
       background-color: #17A9C9;
       padding:5px;
       box-sizing: border-box;
@@ -166,6 +218,35 @@ export default {
     padding-left:40px;
     padding-right:40px;
   }
+
+  .nutrition-panel{
+    width: 150%;
+    height: 100%;
+    margin: 5% auto;
+    overflow-y: auto;
+  }
+
+  .exercise-panel{
+    width: 150%;
+    height: 100%;
+    margin: 5% auto;
+    overflow-y: auto;
+  }
+  .header-info {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+
+  }
+
+  .coach-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+  }
+
 
 }
 
