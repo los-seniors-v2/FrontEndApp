@@ -23,6 +23,7 @@ export default {
           // User found, handle successful login
           const user = response.data[0];
           //Redirect to dashboard or home page
+          localStorage.setItem('user', JSON.stringify(user));
           this.$router.push("/home");
           // Store user information in localStorage or state management library
         } else {
