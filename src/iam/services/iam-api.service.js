@@ -9,4 +9,8 @@ export class IamApiService{
     postUser(user){
         return http.post("/users", user);
     }
+
+    loginUser(email, password) {
+        return http.get(`/users?email=${email}&password=${password}`);
+    }
 }
