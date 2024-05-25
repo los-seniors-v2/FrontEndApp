@@ -22,11 +22,17 @@ import Menubar      from "primevue/menubar";
 import Toolbar      from "primevue/toolbar";
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
+import ConfirmDialog from 'primevue/confirmdialog';
+import ConfirmationService from "primevue/confirmationservice";
+import Ripple from "primevue/ripple";
+import ToastService from "primevue/toastservice";
 
 const app = createApp(App);
 
 // Add configuration for PrimeVue Plugin and components
-app.use(PrimeVue, { ripple: true })
+app.use(PrimeVue, {ripple: true})
+    .use(ConfirmationService)
+    .use(ToastService)
     .component('pv-button', Button)
     .component('pv-card', Card)
     .component('pv-select-button', SelectButton)
@@ -36,6 +42,7 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-menubar', Menubar)
     .component('pv-toolbar', Toolbar)
     .component('pv-accordion', Accordion)
-    .component('pv-accordionTab', AccordionTab);
+    .component('pv-accordionTab', AccordionTab)
+    .component('pv-confirm-dialog', ConfirmDialog);
 // Mount the app
 app.mount('#app');

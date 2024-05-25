@@ -9,6 +9,8 @@ export default defineComponent({
 </script>
 
 <template>
+  <Toast/>
+  <pv-confirm-dialog></pv-confirm-dialog>
   <RoutineList />
 </template>
 
