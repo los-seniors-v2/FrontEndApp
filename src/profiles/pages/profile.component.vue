@@ -1,12 +1,26 @@
 <script >
-import toolbarComponent from "../../../public/components/toolbar.component.vue";
-import SidebarComponent from "../../components/sidebar.component.vue";
+import toolbarComponent from "../../public/components/toolbar.component.vue";
+import SidebarComponent from "../components/sidebar.component.vue";
+import {http} from "../services/http-common.js";
 
 export default {
   name: "profile-component",
   components: {SidebarComponent, toolbarComponent},
-
-
+  data() {
+    return {
+      exercises: [],
+    }
+  },
+  created() {
+    this.fetchExercises();
+  },
+  methods: {
+    fetchExercises() {
+      http.get().then(response => {
+        this.exercises = response.data;
+      });
+    }
+  }
 }
 </script>
 
@@ -33,6 +47,18 @@ export default {
 
     <div class="container3">
       <h1>Trainer Session</h1>
+      <div style="display: grid; grid-template-columns: repeat(7, 1fr) " class="card">
+          <div v-for="exercise in exercises" >
+              <div class="exercise" >
+                <p class="day">{{exercise.day}}</p>
+                <p class="routine">
+                  <input type="checkbox">
+                  {{exercise.routine}}
+                </p>
+              </div>
+          </div>
+      </div>
+      <p>Workout session at the gym today! #Motivation <br> Date: 13/04/2024 </p>
     </div>
 
     <div class="container4">
@@ -48,10 +74,7 @@ export default {
       <Button class="button">Submit</Button>
     </div>
 
-
-
   </div>
-
 
 </template>
 
@@ -86,7 +109,35 @@ export default {
   }
   .container3{
     text-align:center;
+    width: 100vw;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+  .card{
+    border: 1px solid #ae0606;
+    margin: 10px;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .exercise{
+    border: 1px solid black;
+    margin: 10px;
+    width: 80%;
+    height: 100px;
+    .day{
+      margin-top:0px;
+      background-color: #17A9C9;
+      padding:5px;
+      box-sizing: border-box;
+    }
+  }
+
+
   .container4{
     text-align:center;
     display:flex;
@@ -113,6 +164,10 @@ export default {
     padding-left:40px;
     padding-right:40px;
   }
+
+
+
+
 }
 
 </style>

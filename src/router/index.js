@@ -5,7 +5,7 @@ import BookASessionComponent from "../counseling/pages/book-a-session.component.
 import HomeSection from "../nutrition/pages/home-section.vue";
 import HomeComponent from "../public/pages/home.component.vue";
 import SidebarComponent from "../profiles/components/sidebar.component.vue";
-import ProfileComponent from "../profiles/model/pages/profile.component.vue";
+import ProfileComponent from "../profiles/pages/profile.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
