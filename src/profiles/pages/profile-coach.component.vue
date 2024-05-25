@@ -91,7 +91,9 @@ export default {
     .sidebar{
       position:absolute;
       top:40%;
-      left:5%;
+      width:10%;
+      border:none;
+
 
     }
   }
@@ -164,9 +166,6 @@ export default {
     padding-left:40px;
     padding-right:40px;
   }
-
-
-
 
 }
 

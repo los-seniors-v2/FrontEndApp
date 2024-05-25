@@ -48,7 +48,10 @@ export default {
         </li>
       </ul>
     </pv-sidebar>
-    <Button icon="pi pi-arrow-right" @click="visible = true" />
+
+ <Button  @click="visible = true">
+   <i class="pi pi-arrow-right" style="font-size: 2.0rem"> </i>
+  </Button>
   </div>
 </template>
 

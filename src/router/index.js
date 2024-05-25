@@ -5,7 +5,8 @@ import BookASessionComponent from "../counseling/pages/book-a-session.component.
 import HomeSection from "../nutrition/pages/home-section.vue";
 import HomeComponent from "../public/pages/home.component.vue";
 import SidebarComponent from "../profiles/components/sidebar.component.vue";
-import ProfileComponent from "../profiles/pages/profile.component.vue";
+import ProfileComponent from "../profiles/pages/profile-coach.component.vue";
+import ProfileMemberComponent from "../profiles/pages/profile-member.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -19,7 +20,8 @@ const router = createRouter({
 
          */
         {path: '/home', component: HomeComponent},
-        {path: '/profile', component: ProfileComponent}
+        {path: '/profile', component: ProfileComponent},
+        {path: '/profile-member', component: ProfileMemberComponent}
     ]
 });
 
