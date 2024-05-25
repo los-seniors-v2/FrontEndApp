@@ -1,93 +1,62 @@
 <script>
 
+import FormRegister from "../components/form-register.component.vue";
 import FileUploadContent from "../components/file-upload-content.component.vue";
+import {IamApiService} from "../services/iam-api.service.js";
+import {User} from "../model/user.entity.js";
 
 export default {
   name: "resgister",
-  components: {FileUploadContent},
+  components: {FileUploadContent, FormRegister},
   data() {
     return {
+      iamService: new IamApiService(),
       ingredient: null,
-      password: null,
-      confirmPassword: null,
+      password:null,
+      confirmPassword:null
     };
   },
+  methods:{
+    //convierte el usuario de la vista en un usuario
+    convertDisplayableUserToUser(displayableUser){
+      return new User(
+          displayableUser.id,
+          displayableUser.firstname,
+          displayableUser.lastname,
+          displayableUser.email,
+          displayableUser.password,
+          displayableUser.role
+      )
+    },
+    createUser(user){
+      user= this.convertDisplayableUserToUser(user);
+      this.iamService.postUser(user).then((response) => {
+        console.log(response.data);
+      });
+    }
+  }
 }
 </script>
 
 <template>
-<div>
-  <form>
+  <div class="flex justify-content-center flex-column">
     <div>
-      <pv-InputGroup>
-        <pv-InputGroupAddon>
-          <i class="pi pi-user"></i>
-        </pv-InputGroupAddon>
-        <pv-InputText placeholder="Firstname" />
-      </pv-InputGroup>
-
-      <pv-InputGroup>
-        <pv-InputGroupAddon>
-          <i class="pi pi-user"></i>
-        </pv-InputGroupAddon>
-        <pv-InputText placeholder="Lastname" />
-      </pv-InputGroup>
-
-      <pv-InputGroup>
-        <pv-InputGroupAddon>
-          <i class="pi pi-envelope"></i>
-        </pv-InputGroupAddon>
-        <pv-InputText placeholder="Email" />
-      </pv-InputGroup>
-
-      <pv-InputGroup>
-        <pv-InputGroupAddon>
-          <i class="pi pi-lock"></i>
-        </pv-InputGroupAddon>
-        <pv-password v-model="password" toggleMask  placeholder="Password" >
-          <template #header>
-            <h6>Pick a password</h6>
-          </template>
-          <template #footer>
-            <Divider />
-            <p class="mt-2">Suggestions</p>
-            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-              <li>At least one lowercase</li>
-              <li>At least one uppercase</li>
-              <li>At least one numeric</li>
-              <li>Minimum 8 characters</li>
-            </ul>
-          </template>
-        </pv-password>
-      </pv-InputGroup>
-
-      <pv-InputGroup>
-        <pv-InputGroupAddon>
-          <i class="pi pi-lock"></i>
-        </pv-InputGroupAddon>
-        <pv-password v-model="confirmPassword" placeholder="Confirm Password" toggleMask />
-      </pv-InputGroup>
-
-      <div class="card flex justify-content-center">
-        <div class="flex flex-wrap gap-3">
-          <div class="flex align-items-center">
-            <pv-radioButton v-model="ingredient" inputId="user" name="user" value="User" />
-            <label for="ingredient1" class="ml-2">User</label>
-          </div>
-          <div class="flex align-items-center">
-            <pv-radioButton v-model="ingredient" inputId="coach" name="coach" value="Coach" />
-            <label for="ingredient2" class="ml-2">Coach</label>
-          </div>
-        </div>
+      <div class="flex justify-content-center">
+        <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:500px" />
       </div>
+      <h2 class="flex justify-content-center">Register</h2>
     </div>
-  </form>
+  </div>
 
-  <h2>Certidicado de autenticacion</h2>
+  <form-register @form-submitted="createUser" ></form-register>
 
-  <file-upload-content></file-upload-content>
+  <div class="flex flex-column justify-content-center align-items-center">
+    <h2 class="m-2">Complete the verification steps below</h2>
+    <h4 class="mt-0 mb-4">upload certificate or extra documentation</h4>
+    <file-upload-content></file-upload-content>
+    <p>already have an account?<a>Sign in</a></p>
+  </div>
 
-</div>
 </template>
 
 <style scoped>

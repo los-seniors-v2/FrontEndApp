@@ -2,17 +2,27 @@
   "users": [
     {
       "id": 1,
-      "name": "John Doe",
+      "firstname": "Jhon",
+      "lastname": "Doe",
       "email": "jhon@gmail.com",
       "password": "123456",
-      "role": "user"
+      "role": "User"
     },
     {
-        "id": 2,
-        "name": "Jane Doe",
-        "email": "jane@gmail.com",
-        "password": "123",
-        "role": "choach"
+      "id": 2,
+      "firstname": "Jan",
+      "lastname": "felipe",
+      "email": "jane@gmail.com",
+      "password": "123",
+      "role": "Choach"
+    },
+    {
+      "firstname": "karol",
+      "lastname": "GI",
+      "email": "karol@karol",
+      "password": "1234",
+      "role": "User",
+      "id": 3
     }
   ]
 }

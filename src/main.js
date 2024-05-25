@@ -44,6 +44,9 @@ import RadioButton from "primevue/radiobutton";
 import Password from "primevue/password";
 import FileUpload from "primevue/fileupload";
 import Badge from "primevue/badge";
+import Divider from "primevue/divider";
+import Toast from "primevue/toast";
+import ProgressBar from "primevue/progressbar";
 
 const app = createApp(App);
 
@@ -73,6 +76,9 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-password',Password)
     .component('pv-fileUpload',FileUpload)
     .component('pv-badge',Badge)
+    .component('pv-divider',Divider)
+    .component('pv-toast', Toast)
+    .component('pv-progressBar', ProgressBar)
     .use(router);
 app.mount('#app');
 

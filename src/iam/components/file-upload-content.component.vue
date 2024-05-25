@@ -59,8 +59,8 @@ export default {
 </script>
 
 <template>
-  <div class="card">
-    <Toast />
+  <div class="card" style="width:800px">
+    <pv-toast />
     <pv-fileUpload name="demo[]" url="/api/upload" @upload="onTemplatedUpload($event)" :multiple="true" accept="image/*" :maxFileSize="1000000" @select="onSelectedFiles">
       <template #header="{ chooseCallback, uploadCallback, clearCallback, files }">
         <div class="flex flex-wrap justify-content-between align-items-center flex-1 gap-2">
@@ -69,8 +69,8 @@ export default {
             <pv-button @click="uploadEvent(uploadCallback)" icon="pi pi-cloud-upload" rounded outlined severity="success" :disabled="!files || files.length === 0"></pv-button>
             <pv-button @click="clearCallback()" icon="pi pi-times" rounded outlined severity="danger" :disabled="!files || files.length === 0"></pv-button>
           </div>
-          <ProgressBar :value="totalSizePercent" :showValue="false" :class="['md:w-20rem h-1rem w-full md:ml-auto', { 'exceeded-progress-bar': totalSizePercent > 100 }]"
-          ><span class="white-space-nowrap">{{ totalSize }}B / 1Mb</span></ProgressBar
+          <pv-progressBar :value="totalSizePercent" :showValue="false" :class="['md:w-20rem h-1rem w-full md:ml-auto', { 'exceeded-progress-bar': totalSizePercent > 100 }]"
+          ><span class="white-space-nowrap">{{ totalSize }}B / 1Mb</span></pv-progressBar
           >
         </div>
       </template>
