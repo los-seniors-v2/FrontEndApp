@@ -47,127 +47,167 @@ export default {
 </script>
 
 <template>
+<div class="main">
 
   <toolbar-component/>
 
   <div class="banner">
     <div class="content">
       <br>
-      <h1 style="font-size:70px">Welcome to Your Gym App!</h1><br>
-      <p style="font-size: 30px">Track your workout plans and nutrition here.</p>
+      <h1 style="font-size:4rem">Welcome to Your Gym App!</h1><br>
+      <p style="font-size: 2rem">Track your workout plans and nutrition here.</p>
       <br>
     </div>
   </div>
 
 
-  <Card class="full-width-card">
-    <template #title>
-      <div style="display: flex; align-items: center;">
+  <div class="full-width-card">
 
-        <h2 style="margin-left: 12%; font-size: 80px; margin-top: 5%;">Your Workout Plan</h2>
+      <div class="container1">
+        <div>
+          <h2  class="workout_plan">Your Workout Plan</h2>
+        </div>
 
-        <div style="display: flex; justify-content: space-around; margin-left: 20%; margin-top: 3%">
-          <div>
-            <img src="../../assets/images/muscle-icon.png" alt="Cardio Icon" style="width: 100px; height: 100px;">
+        <div  class="exercises">
+          <div  class="image">
+            <img src="../../assets/images/muscle-icon.png" alt="Cardio Icon" style="width: 100px; height: 100px;" >
             <p>Cardio</p>
           </div>
-          <div style="margin-left: 100%">
-            <img src="../../assets/images/weigh-lifting-icon.png" alt="Training Icon" style="width: 100px; height: 100px;">
+          <div  class="image">
+            <img src="../../assets/images/weigh-lifting-icon.png" alt="Training Icon" style="width: 100px; height: 100px;" >
             <p>Training</p>
           </div>
         </div>
       </div>
-    </template>
-  </Card>
 
-  <Card class="full-width-card">
-    <template #title>
-      <div style="display: flex; align-items: start;">
-      <h2 style="margin-left: 12%; margin-top: 5%; font-size: 80px">Exercise Information</h2>
+  </div>
 
-      <section>
-      <pv-panel class="right-panel" style="width: 80%">
-        <template #header>
-          <div class="header-content">
-            <img :src="selectedImage" alt="random-image" class="header-image">
-          </div>
-        </template>
+  <div class="full-width-card">
 
-        <div class="header-content">
-          <div class="header-text">
-            <h3>Cardio Exercise</h3>
-            <p>{{ selectedContent }}</p>
-          </div>
+      <div class="container2">
+        <div>
+          <h2 style=" font-size: 80px">Exercise Information</h2>
         </div>
-      </pv-panel>
 
-      <pv-panel class="right-panel" style="width: 80%">
-        <template #header>
-          <div class="header-content">
-            <img :src="selectedImage2" alt="random-image" class="header-image">
-          </div>
-        </template>
+        <div class="images_and_info">
+            <pv-panel class="right-panel" >
+              <template #header>
+                <div class="info">
+                    <div class="header-content">
+                      <img :src="selectedImage" alt="random-image" class="header-image">
+                    </div>
+                    <div class="header-text">
+                      <h3>Cardio Exercise</h3>
+                      <p>{{ selectedContent }}</p>
+                    </div>
+                </div>
+              </template>
+            </pv-panel>
 
-        <div class="header-content">
-          <div class="header-text">
-            <h3>Strength Training</h3>
-            <p>{{selectedContent2}}</p>
-          </div>
+            <pv-panel class="right-panel" >
+              <template #header>
+                <div class="info">
+                    <div class="header-content">
+                      <img :src="selectedImage2" alt="random-image" class="header-image">
+                    </div>
+                    <div class="header-content">
+                      <div class="header-text">
+                        <h3>Strength Training</h3>
+                        <p>{{selectedContent2}}</p>
+                      </div>
+                    </div>
+                </div>
+              </template>
+            </pv-panel>
         </div>
-      </pv-panel>
-      </section>
+
       </div>
-    </template>
-  </Card>
+  </div>
 
+
+</div>
 </template>
 
 <style scoped>
-.banner {
-  align-items: center;
-  background-image: url('../../assets/images/banner-flexpal.png');
-}
+.main{
+  width:100vw;
+  height:100vh;
+  .banner {
+    width:100%;
+    align-items: center;
+    background-image: url('../../assets/images/banner-flexpal.png');
+    background-size: cover;
+  }
 
-.content {
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  color: #17A9C9;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-}
+  .content {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #17A9C9;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
 
 .full-width-card {
-  width: 100%;
-  font-family: 'Roboto', sans-serif;
-  color: black;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    width: 100%;
+    margin-top: 5%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing: border-box;
+
+  .container1{
+    width:90%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-direction: row;
+
+  }
+  .workout_plan{
+    font-size: 70px;
+  }
+  .exercises{
+    display: flex;
+    justify-content: space-around;
+
+  }
+  .image{
+    margin-right: 50%;
+    text-align:center;
+  }
+
+  .container2{
+    width:90%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+
+    box-sizing: border-box;
+    .images_and_info{
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+
+    }
+    .header-image{
+      width: 100px;
+      height: 100px;
+      margin-right:10px;
+    }
+    .info
+    {
+      display:flex;
+    }
+    .header-content{
+      margin-right:10px;
+    }
+  }
+
+  }
+
+
 
 }
 
-.right-panel {
-  display: flex;
-  order: 1;
-  margin-top: 5%;
-  margin-left: 50%;
-  height: 120px;
-  overflow-y: auto;
-
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  background-color: white !important;
-}
-.header-image {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
-}
-.header-text {
-  display: flex;
-  flex-direction: column;
-}
-.header-text p {
-  margin-top: -15px;
-}
 </style>

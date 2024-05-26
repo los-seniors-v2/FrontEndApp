@@ -31,18 +31,18 @@ export default {
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>
     </div>
-    <div class="container2">
-      <div class="left_side">
-        <h1>Your Workout Plan</h1>
-        <div>
-          <Button>Exercise</Button>
-          <Button>Nutrition</Button>
-        </div>
-      </div>
-      <div style="border:3px solid black">
-<!--        AQUI PONER INFORMACION DE API-->PONER INFO DE API
-      </div>
 
+    <div class="container2">
+        <div class="left_side">
+          <h1>Your Workout Plan</h1>
+          <div>
+            <Button>Exercise</Button>
+            <Button>Nutrition</Button>
+          </div>
+        </div>
+        <div style="border:3px solid black">
+<!--          AQUI PONER INFORMACION DE API-->PONER INFO DE API
+        </div>
     </div>
 
     <div class="container3">
