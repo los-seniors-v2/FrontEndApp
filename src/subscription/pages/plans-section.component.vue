@@ -1,6 +1,21 @@
 <script >
+import Card from "primevue/card"
+import Button from "primevue/button"
+import OverlayPanel from "primevue/overlaypanel"
+import OverlayPanelForm from "./subscription-overlay-panel.component.vue"
 export default {
   name: "Plans",
+  components: {
+    Card,
+    Button,
+    OverlayPanel,
+    OverlayPanelForm
+  },
+  methods: {
+    showOverlayPanel() {
+      this.$refs.op.toggle(event); // Muestra el OverlayPanel
+    }
+  }
 };
 
 </script>
@@ -21,10 +36,11 @@ export default {
       </template>
       <template #footer >
         <div class="flex ">
-          <Button label="Suscribirse" class="w-full" />
+          <Button label="Suscribirse" class="w-full" @click="showOverlayPanel" /> <!-- Agrega un evento click al botón -->
         </div>
       </template>
     </Card>
+  
 
 
 
@@ -41,7 +57,7 @@ export default {
     </template>
     <template #footer >
       <div class="flex ">
-        <Button label="Suscribirse" class="w-full" />
+        <Button label="Suscribirse" class="w-full" @click="showOverlayPanel" /> <!-- Agrega un evento click al botón -->
       </div>
     </template>
 
@@ -60,12 +76,14 @@ export default {
     </template>
     <template #footer >
       <div class="flex ">
-        <Button label="Suscribirse" class="w-full" />
+        <Button label="Suscribirse" class="w-full" @click="showOverlayPanel" /> <!-- Agrega un evento click al botón -->
       </div>
     </template>
 
   </Card>
-
+  <OverlayPanel ref="op" showCloseIcon appendTo="body"> <!-- Agrega el componente OverlayPanel -->
+    <OverlayPanelForm /> <!-- Usa el componente OverlayPanelForm -->
+  </OverlayPanel>
 
   </div>
 

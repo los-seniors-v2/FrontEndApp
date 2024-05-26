@@ -77,3 +77,6 @@ button:focus-visible {
         background-color: #f9f9f9;
     }
 }
+.p-overlaypanel .p-overlaypanel-close::before {
+    content: "x"; /* Este es el código unicode del icono pi-window-close de PrimeIcons */
+}
