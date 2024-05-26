@@ -70,7 +70,6 @@ export default {
 <style>
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -79,7 +78,6 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 .coaches {
   display: grid;

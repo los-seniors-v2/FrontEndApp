@@ -23,6 +23,14 @@
       "password": "1234",
       "role": "User",
       "id": 3
+    },
+    {
+      "firstname": "admin",
+      "lastname": "god",
+      "email": "admin@admin",
+      "password": "123456",
+      "role": "Coach",
+      "id": 4
     }
   ]
 }

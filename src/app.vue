@@ -22,7 +22,7 @@
 </script>
 
 <template>
-  <toolbar-section/>
+  <toolbar-section v-if="$route.path !== '/login' && $route.path !== '/register'"/>
    <router-view/>
 </template>
 
