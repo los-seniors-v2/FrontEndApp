@@ -47,6 +47,7 @@ import Badge from "primevue/badge";
 import Divider from "primevue/divider";
 import Toast from "primevue/toast";
 import ProgressBar from "primevue/progressbar";
+import ConfirmDialog from "primevue/confirmdialog";
 
 const app = createApp(App);
 
@@ -79,6 +80,7 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-divider',Divider)
     .component('pv-toast', Toast)
     .component('pv-progressBar', ProgressBar)
+    .component('pv-confirm-dialog', ConfirmDialog)
     .use(router);
 app.mount('#app');
 

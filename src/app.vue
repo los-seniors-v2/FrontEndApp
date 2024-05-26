@@ -11,30 +11,18 @@
       ToolbarSessionComponent, QuestionSection, DetailsSection, GuidelinesSection, TrainerSection
     }
   };*/
+
+  import ToolbarSection from "./public/components/toolbar.component.vue";
+
   export default {
     name: 'app',
+    components: {ToolbarSection},
     title: 'Flex Pal',
-    data() {
-      return {
-        drawer: false,
-        items: [
-          { label: 'Routine List', to: '/routine-list'},
-          { label: 'Plans', to: '/plans'},
-          { label: 'Programming Session', to: '/programming-session'},
-          { label: 'Home', to: '/home'},
-        ]
-      }
-    },
-    methods: {
-      toggleDrawer() {
-        this.drawer = !this.drawer
-      }
-    }
   }
 </script>
 
 <template>
-  <toolbar/>
+  <toolbar-section/>
    <router-view/>
 </template>
 
