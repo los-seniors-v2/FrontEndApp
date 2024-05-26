@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     fetchCoaches() {
-      axios.get("src/app/services/coach-api.service.json")
+      axios.get("https://my-json-server.typicode.com/LuiggiP/fake-api-couches/db")
           .then(response => {
             console.log(response.data);
             this.coaches = response.data.coaches;
@@ -50,29 +50,43 @@ export default {
         </div>
       </div>
     </div>
-    <div class="book"> 
+    <div class="book">
       <h1 class="centered">Book a Training Session</h1>
       <p class="centered">Fill in the details</p>
-      <div class="details">  
+      <div class="details">
         <p>Select Coach</p>
         <div class="coach-selection">
-        <button v-for="coach in coaches" :key="coach.id" @click="selectedCoach = coach">{{ coach.name }}</button>
+          <button v-for="coach in coaches" :key="coach.id" @click="selectedCoach = coach">{{ coach.name }}</button>
         </div>
         <p>Session Date</p>
         <Calendar v-model="selectedDate" placeholder="Select Date" class="wide-calendar"></Calendar>
-      </div>  
-        <button class="book-button">Book Now</button>
+      </div>
+      <button class="book-button">Book Now</button>
     </div>
     <footer>© 2024 FlexPal. All rights reserved.</footer>
   </div>
 </template>
 
 <style>
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 .coaches {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 0.5rem;
+  color: black;
 }
 .coach {
   display: flex;
@@ -97,12 +111,14 @@ export default {
 }
 .book{
   padding: 5rem;
+  color: black;
 }
 .centered {
   text-align: center;
 }
 .coach-selection button {
   margin: 0.5rem;
+  color: white;
 }
 .details {
   display: flex;
@@ -110,6 +126,19 @@ export default {
   align-items: flex-start;
   justify-content: center;
   margin-left: 4rem;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #007bff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 .details p {
   font-weight: bold;
