@@ -101,23 +101,32 @@ export default {
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>
 
-      <div class="member-profile">
-        <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
-        <h1>Member Name</h1>
-        <p>Member Description</p>
+      <div class="sub-container1">
+          <div class="member-profile">
+            <div class="photo">
+              <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
+            </div>
+            <div>
+              <h1>Member Name</h1>
+              <span class="member-tag">Member </span>
+            </div>
+        </div>
       </div>
 
     </div>
 
     <div class="container2">
       <div class="left_side">
-        <h1 style="margin-top: 35%" >Your Workout Plan</h1>
+        <div>
+          <h1  >Your Workout Plan</h1>
+        </div>
         <div>
           <Button @click="showExercise">Exercise</Button>
           <Button @click="showNutrition">Nutrition</Button>
         </div>
       </div>
 
+      <div class="right_side">
       <div v-if="showExercisePanel">
         <pv-panel class="exercise-panel">
 
@@ -157,22 +166,20 @@ export default {
         </pv-panel>
       </div>
     </div>
-
+    </div>
     <pv-divider />
 
-    <div class="container2">
-      <div class="left_side-recommended">
-        <h1 style="margin-top: 50%">Recommended Exercises</h1>
+    <div class="container2-5">
+      <div>
+        <h1 >Recommended Exercises</h1>
       </div>
 
-      <section class="recommended-panel">
-      <pv-panel class="right-panel" style="width: 25%;">
-        <template #header>
-          <div class="header-content">
-            <img :src="selectedImage" alt="random-image" class="header-image">
-          </div>
+    <div class="right_side">
+      <section class="recommended-panel" >
+      <pv-panel class="right-panel" style="width: 25%; ">
+        <template #header class="image_area">
+            <img :src="selectedImage" alt="random-image" class="header-image" >
         </template>
-
         <div class="header-content">
           <div class="header-text">
             <p>{{ selectedContent }}</p>
@@ -184,7 +191,7 @@ export default {
         <pv-panel class="right-panel" style="width: 25%; margin-left: 5%">
           <template #header>
             <div class="header-content">
-              <img :src="selectedImage2" alt="random-image" class="header-image">
+              <img :src="selectedImage2" alt="random-image" class="header-image" >
             </div>
           </template>
 
@@ -196,21 +203,21 @@ export default {
 
         </pv-panel>
       </section>
-
+    </div>
     </div>
 
     <pv-divider />
 
-    <div class="container2">
-      <div class="left_side-recommended">
-        <h1 style="margin-top: 50%">Workout Guide</h1>
+    <div class="container2-5">
+      <div >
+        <h1 >Workout Guide</h1>
       </div>
-      <section class="guide-panel">
+
+      <div class="right_side" >
+      <section class="recommended-panel">
         <pv-panel class="right-panel" style="width: 25%;">
-          <template #header>
-            <div class="header-content">
-              <img :src="selectedImage3" alt="random-image" class="header-image2">
-            </div>
+          <template #header class="xd">
+              <img :src="selectedImage3" alt="random-image" class="header-image">
           </template>
 
           <div class="header-content">
@@ -224,7 +231,7 @@ export default {
         <pv-panel class="right-panel" style="width: 25%; margin-left: 5%">
           <template #header>
             <div class="header-content">
-              <img :src="selectedImage4" alt="random-image" class="header-image2">
+              <img :src="selectedImage4" alt="random-image" class="header-image">
             </div>
           </template>
 
@@ -237,7 +244,7 @@ export default {
         </pv-panel>
       </section>
     </div>
-
+    </div>
     <pv-divider />
 
     <div class="container3">
@@ -292,38 +299,84 @@ export default {
   height:100vh;
 
   .container1{
+    height:30%;
     width:100%;
-    height: 30%;
     background-image:linear-gradient(to right,#395BB2 0%,#2956CA 38%,#001855 100%);
     position:relative;
+
+    .sub-container1{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height:100%;
+      width:100%;
+
+    }
     .sidebar{
       position:absolute;
       top:40%;
       width:10%;
       border:none;
+    }
+    .member-profile{
+      width:30%;
+      display:flex;
+      flex-direction: row;
 
+      box-sizing: border-box;
+    }
+    .photo{
+      margin-right:10%;
+
+    }
+    .member-tag{
+      color:white;
+      background-color: #719ac3;
+      padding:5px;
+      box-sizing: border-box;
     }
   }
   .container2{
     display:flex;
     flex-direction: row;
-    justify-content:space-evenly;
-    margin-bottom: 5rem;
-
-
-
+    justify-content:space-around;
+    align-items:center;
+    margin-bottom: 2rem;
     .left_side{
-      text-align:center;
+
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       Button{
         margin:10px;
       }
-    }
-
+  }
   }
 
-  .left_side-recommended {
-    margin-right: -20%; /* Ajusta este valor según tus necesidades */
-  }
+ .container2-5 {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+   .right_side{
+     width:65%;
+   }
+
+   .image_area{
+     display:flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+   }
+   .header-image{
+     width: 100%;
+     height: 100%;
+
+   }
+ }
+
   .container3{
     display:flex;
     flex-direction: column;
@@ -331,16 +384,13 @@ export default {
     align-items: center;
     margin-bottom: 5rem;
     width:100%;
-    border:3px solid black;
     .progress_info{
       display:flex;
       flex-direction: row;
       justify-content:center;
       align-items:center;
-      border:3px solid black;
       width:80%;
       .info{
-        border:3px solid black;
         margin:10px;
         width:50%;
       }
@@ -350,14 +400,12 @@ export default {
   .container4{
     text-align:center;
     width: 100vw;
-    border: 1px solid black;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .card{
-    border: 1px solid #ae0606;
     margin: 10px;
     width: 75%;
     display: flex;
@@ -447,11 +495,6 @@ export default {
     margin-right:10px;
   }
 
-  .header-image2{
-    width: 380px;
-    height: 120px;
-    margin-right:10px;
-  }
   .info
   {
     display:flex;
