@@ -1,13 +1,13 @@
 <script>
 export default {
-  name: "toolbar-component"
+  name: "toolbar-section",
 }
 </script>
 
 <template>
   <pv-toolbar class="toolbar">
     <template #start>
-      <img src="src/assets/images/flexpal-logo.png" alt="logo" width="150px">
+      <img src="../../assets/images/flexpal-logo.png" alt="logo" width="150px">
     </template>
 
     <template #center>
@@ -27,11 +27,15 @@ export default {
             <span class="font-medium" style="font-size: 1.5rem">Examiner Performance Overview</span>
           </a>
         </li>
+        <li>
+          <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple" href="/plans">
+            <i class="pi pi-dollar mr-4" style="font-size: 2.5rem"></i>
+            <span class="font-medium" style="font-size: 1.5rem">Subscription</span>
+          </a>
+        </li>
       </ul>
     </template>
   </pv-toolbar>
-
-
 </template>
 
 <style scoped>
