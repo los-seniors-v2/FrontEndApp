@@ -40,7 +40,7 @@ export default {
         </li>
         <li>
           <Button>
-            <a href="/profie"> Profile </a>
+            <a href="/profile"> Profile </a>
           </Button>
         </li>
       </ul>
