@@ -27,6 +27,7 @@ import AccordionTab from 'primevue/accordiontab';
 import Panel from 'primevue/panel';
 import FloatLabel from 'primevue/floatlabel';
 import Avatar from "primevue/avatar";
+import Divider from "primevue/divider";
 
 const app = createApp(app1);
 
@@ -50,6 +51,7 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-panel', Panel)
     .component('pv-toolbar', Toolbar)
     .component('pv-avatar', Avatar)
+    .component('pv-divider', Divider)
     .use(router);
 app.mount('#app');
 

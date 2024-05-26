@@ -2,22 +2,93 @@
 import toolbarComponent from "../../public/components/toolbar.component.vue";
 import SidebarComponent from "../components/sidebar.component.vue";
 import {http} from "../services/http-common.js";
+
+import squadInfo from "../../assets/images/squad-plank-info.jpg";
+import deadInfo from "../../assets/images/deadlift-info.jpg";
+import benchInfo from "../../assets/images/bench-info.jpg";
+
+import pullInfo from "../../assets/images/pull-info.jpg";
+import pushInfo from "../../assets/images/push-info.jpg";
+import plankInfo from "../../assets/images/plank-info.png";
+
+import squadGuide from "../../assets/images/squad-plank-guide.png";
+import pullGuide from "../../assets/images/pull-push-guide.jpg";
+import pullGuide2 from "../../assets/images/pull-push-guide2.jpg";
+
+import bicepGuide from "../../assets/images/bicep-guide.png";
+import squadGuide2 from "../../assets/images/squad-plank2-guide.png";
+import benchGuide from "../../assets/images/bench-guide.png";
+
+
 export default {
   name: "profile_member-component",
   components: {SidebarComponent, toolbarComponent},
   data() {
     return {
       exercises: [],
+      showExercisePanel: false,
+      showNutritionPanel: false,
+
+      images: [squadInfo, deadInfo, benchInfo],
+      content: ["Squats\n" +"\n" +"4 sets x 12 reps", "Deadlifts\n" +"\n" +"4 sets x 12 reps", "Bench Press\n" +"\n" +"4 sets x 12 reps"],
+      selectedImage: "",
+      selectedContent: "",
+
+      images2: [pullInfo, pushInfo, plankInfo],
+      content2: ["Pull-ups\n" +"\n" +"3 sets x 10 reps", "Push-ups\n" +"\n" +"3 sets x 10 reps", "Planks\n" +"\n" +"3 sets x 30 seconds"],
+      selectedImage2: "",
+      selectedContent2: "",
+
+      images3: [squadGuide, pullGuide, pullGuide2],
+      content3: [
+        "Squats: Stand with feet shoulder-width apart. Lower your hips and bend your knees, keeping your back straight.",
+        "Pull-ups: Hang from a bar with palms facing away. Pull yourself up until your chin is above the bar.",
+        "Deadlift: Stand with feet hip-width apart. Lift the bar by extending your hips and knees while keeping your back straight."
+      ],
+      selectedImage3: "",
+      selectedContent3: "",
+
+      images4:[bicepGuide, squadGuide2, benchGuide ],
+      content4: [
+        "Bicep Curls: Hold a dumbbell in each hand. Curl the weights towards your shoulders and then lower them back down.",
+        "Bench Press: Lie on a bench with feet on the ground. Lower the bar to your chest and then push it back up.",
+        "Plank: Place forearms on the ground, extend legs back. Keep your body in a straight line and hold."
+      ],
+      selectedImage4: "",
+      selectedContent4: ""
     }
   },
   created() {
     this.fetchExercises();
+
+    this.selectedImage = this.selectRandomElement(this.images);
+    this.selectedContent = this.selectRandomElement(this.content);
+
+    this.selectedImage2 = this.selectRandomElement(this.images2);
+    this.selectedContent2 = this.selectRandomElement(this.content2);
+
+    this.selectedImage3 = this.selectRandomElement(this.images3);
+    this.selectedContent3 = this.selectRandomElement(this.content3);
+
+    this.selectedImage4 = this.selectRandomElement(this.images4);
+    this.selectedContent4 = this.selectRandomElement(this.content4);
   },
   methods: {
     fetchExercises() {
       http.get().then(response => {
         this.exercises = response.data;
       });
+    },
+    showExercise() {
+      this.showExercisePanel = true;
+      this.showNutritionPanel = false;
+    },
+    showNutrition() {
+      this.showExercisePanel = false;
+      this.showNutritionPanel = true;
+    },
+    selectRandomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
     }
   }
 }
@@ -29,38 +100,145 @@ export default {
 
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>
+
+      <div class="member-profile">
+        <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
+        <h1>Member Name</h1>
+        <p>Member Description</p>
+      </div>
+
     </div>
 
     <div class="container2">
       <div class="left_side">
-        <h1>Your Workout Plan</h1>
+        <h1 style="margin-top: 35%" >Your Workout Plan</h1>
         <div>
-          <Button>Exercise</Button>
-          <Button>Nutrition</Button>
+          <Button @click="showExercise">Exercise</Button>
+          <Button @click="showNutrition">Nutrition</Button>
         </div>
       </div>
-      <div style="border:3px solid black">
-        <!--        AQUI PONER INFORMACION DE API-->PONER INFO DE API
+
+      <div v-if="showExercisePanel">
+        <pv-panel class="exercise-panel">
+
+          <template #header >
+            <div class="header-info">
+              <img src="../../../src/assets/images/muscle-icon.png" alt="routines" style="width: 50px; height: 50px;margin-left: 45%"/>
+              <h2 style="margin-left: 5%;white-space: nowrap;">Exercise Information</h2>
+            </div>
+          </template>
+
+          <div>
+            <p> API<br> API </p>
+          </div>
+
+          <template #footer>
+            <Button style="margin-left: 38%">View More</Button>
+          </template>
+        </pv-panel>
+      </div>
+
+      <div v-if="showNutritionPanel">
+        <pv-panel class="nutrition-panel">
+          <template #header>
+            <div class="header-info">
+              <img src="https://cdn-icons-png.flaticon.com/512/1625/1625042.png" alt="nutrition" style="width: 50px; height: 50px;margin-left: 45%"/>
+              <h2 style="margin-left: 5%;white-space: nowrap;">Nutrition Plans </h2>
+            </div>
+          </template>
+
+          <div>
+            <p>API <br> API </p>
+          </div>
+
+          <template #footer>
+            <Button style="margin-left: 38%">View More</Button>
+          </template>
+        </pv-panel>
       </div>
     </div>
 
-    <div class="container2">
-      <div class="left_side">
-        <h1>Recommended Exercises</h1>
-      </div>
-      <div style="border:3px solid black">
-        <!--        AQUI PONER INFORMACION DE API-->PONER INFO DE API
-      </div>
-    </div>
+    <pv-divider />
 
     <div class="container2">
-      <div class="left_side">
-        <h1>Workout Guide</h1>
+      <div class="left_side-recommended">
+        <h1 style="margin-top: 50%">Recommended Exercises</h1>
       </div>
-      <div style="border:3px solid black">
-        <!--        AQUI PONER INFORMACION DE API-->PONER INFO DE API
-      </div>
+
+      <section class="recommended-panel">
+      <pv-panel class="right-panel" style="width: 25%;">
+        <template #header>
+          <div class="header-content">
+            <img :src="selectedImage" alt="random-image" class="header-image">
+          </div>
+        </template>
+
+        <div class="header-content">
+          <div class="header-text">
+            <p>{{ selectedContent }}</p>
+          </div>
+        </div>
+
+      </pv-panel>
+
+        <pv-panel class="right-panel" style="width: 25%; margin-left: 5%">
+          <template #header>
+            <div class="header-content">
+              <img :src="selectedImage2" alt="random-image" class="header-image">
+            </div>
+          </template>
+
+          <div class="header-content">
+            <div class="header-text">
+              <p>{{ selectedContent2 }}</p>
+            </div>
+          </div>
+
+        </pv-panel>
+      </section>
+
     </div>
+
+    <pv-divider />
+
+    <div class="container2">
+      <div class="left_side-recommended">
+        <h1 style="margin-top: 50%">Workout Guide</h1>
+      </div>
+      <section class="guide-panel">
+        <pv-panel class="right-panel" style="width: 25%;">
+          <template #header>
+            <div class="header-content">
+              <img :src="selectedImage3" alt="random-image" class="header-image2">
+            </div>
+          </template>
+
+          <div class="header-content">
+            <div class="header-text">
+              <p>{{ selectedContent3 }}</p>
+            </div>
+          </div>
+
+        </pv-panel>
+
+        <pv-panel class="right-panel" style="width: 25%; margin-left: 5%">
+          <template #header>
+            <div class="header-content">
+              <img :src="selectedImage4" alt="random-image" class="header-image2">
+            </div>
+          </template>
+
+          <div class="header-content">
+            <div class="header-text">
+              <p>{{ selectedContent4 }}</p>
+            </div>
+          </div>
+
+        </pv-panel>
+      </section>
+    </div>
+
+    <pv-divider />
 
     <div class="container3">
     <h1>Progress Metrics</h1>
@@ -131,12 +309,20 @@ export default {
     flex-direction: row;
     justify-content:space-evenly;
     margin-bottom: 5rem;
+
+
+
     .left_side{
       text-align:center;
       Button{
         margin:10px;
       }
     }
+
+  }
+
+  .left_side-recommended {
+    margin-right: -20%; /* Ajusta este valor según tus necesidades */
   }
   .container3{
     display:flex;
@@ -184,7 +370,7 @@ export default {
     width: 80%;
     height: 100px;
     .day{
-      margin-top:0px;
+      margin-top:0;
       background-color: #17A9C9;
       padding:5px;
       box-sizing: border-box;
@@ -218,6 +404,81 @@ export default {
     padding-left:40px;
     padding-right:40px;
   }
+
+  .member-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+  }
+
+  .nutrition-panel{
+    width: 150%;
+    height: 100%;
+    margin: 5% auto;
+    overflow-y: auto;
+  }
+
+  .exercise-panel{
+    width: 150%;
+    height: 100%;
+    margin: 5% auto;
+    overflow-y: auto;
+  }
+  .header-info {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+
+  }
+
+  .right-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+  }
+
+  .header-image{
+    width: 100%;
+    height: 180%;
+    margin-right:10px;
+  }
+
+  .header-image2{
+    width: 380px;
+    height: 120px;
+    margin-right:10px;
+  }
+  .info
+  {
+    display:flex;
+  }
+
+  .recommended-panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+
+  .guide-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+
+  .header-content {
+    width: 100%;
+
+  }
+
+
 
 }
 
