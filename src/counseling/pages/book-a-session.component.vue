@@ -39,7 +39,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="body-container">
     <div class="coaches">
       <div class="coach" v-for="coach in coaches" :key="coach.id">
         <img :src="coach.photo" alt="Coach Photo" class="coach-photo">
@@ -68,23 +68,20 @@ export default {
 </template>
 
 <style>
-body {
-  margin: 0;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: black;
 }
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+
 .coaches {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 0.5rem;
-  color: black;
 }
 .coach {
   display: flex;
@@ -108,8 +105,9 @@ body {
   text-align: left;
 }
 .book{
-  padding: 5rem;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .centered {
   text-align: center;
@@ -149,7 +147,7 @@ button:focus-visible {
   color: white;
   padding: 10px 20px;
   margin: 10px;
-  width: 14%;
+  width: 35%;
 }
 
 </style>
