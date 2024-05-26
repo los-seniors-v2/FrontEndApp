@@ -56,7 +56,7 @@ export default {
       <h2 class="m-2">Complete the verification steps below</h2>
       <h4 class="mt-0 mb-4">upload certificate or extra documentation</h4>
       <file-upload-content></file-upload-content>
-      <p>already have an account?<a>Sign in</a></p>
+      <p>already have an account?<a @click="$router.push('/login')" >Sign in</a></p>
     </div>
   </div>
   </div>
