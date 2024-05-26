@@ -36,7 +36,6 @@ export default {
 
 <template>
   <div class="main">
-    <toolbar-component></toolbar-component>
 
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>

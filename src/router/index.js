@@ -21,7 +21,8 @@ const router = createRouter({
          */
         {path: '/home', component: HomeComponent},
         {path: '/profile-coach', component: ProfileComponent},
-        {path: '/profile-member', component: ProfileMemberComponent}
+        {path: '/profile-member', component: ProfileMemberComponent},
+        { path: '/',        redirect: '/home'},
     ]
 });
 

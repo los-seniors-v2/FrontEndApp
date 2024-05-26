@@ -96,7 +96,6 @@ export default {
 
 <template>
   <div class="main">
-    <toolbar-component></toolbar-component>
 
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>
@@ -506,15 +505,6 @@ export default {
     justify-content: center;
 
   }
-
-  .guide-panel {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 100%;
-    overflow-x: auto;
-  }
-
 
   .header-content {
     width: 100%;

@@ -41,16 +41,10 @@ export default {
   }
 
 }
-
-
-
 </script>
 
 <template>
 <div class="main">
-
-  <toolbar-component/>
-
   <div class="banner">
     <div class="content">
       <br>
