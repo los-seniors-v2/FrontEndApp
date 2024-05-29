@@ -12,17 +12,17 @@
     }
   };*/
 
-  import ToolbarSection from "./public/components/toolbar.component.vue";
+  import ToolbarComponent from "./public/components/toolbar.component.vue";
 
   export default {
     name: 'app',
-    components: {ToolbarSection},
+    components: {ToolbarComponent},
     title: 'Flex Pal',
   }
 </script>
 
 <template>
-  <toolbar-section v-if="$route.path !== '/login' && $route.path !== '/register'"/>
+  <toolbar-component v-if="$route.path !== '/login' && $route.path !== '/register'"/>
    <router-view/>
 </template>
 
