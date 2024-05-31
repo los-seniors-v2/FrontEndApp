@@ -11,7 +11,7 @@ import workoutInfo from "../../assets/images/workout-info.jpg";
 import toolbarComponent from "../components/toolbar.component.vue";
 
 export default {
-  name: "home.component",
+  name: "home-coach.component",
   components: {toolbarComponent},
 
   data() {
@@ -44,18 +44,18 @@ export default {
 </script>
 
 <template>
-<div class="main">
-  <div class="banner">
-    <div class="content">
-      <br>
-      <h1 style="font-size:4rem">Welcome to Your Gym App!</h1><br>
-      <p style="font-size: 2rem">Track your workout plans and nutrition here.</p>
-      <br>
+  <div class="main">
+    <div class="banner">
+      <div class="content">
+        <br>
+        <h1 style="font-size:4rem">Welcome to Your Gym App!</h1><br>
+        <p style="font-size: 2rem">Track your workout plans and nutrition here.</p>
+        <br>
+      </div>
     </div>
-  </div>
 
 
-  <div class="full-width-card">
+    <div class="full-width-card">
 
       <div class="container1">
         <div>
@@ -74,52 +74,52 @@ export default {
         </div>
       </div>
 
-  </div>
+    </div>
 
-  <div class="full-width-card">
+    <div class="full-width-card">
 
       <div class="container2">
         <div>
-          <h2 style=" font-size: 80px">Exercise Information</h2>
+          <h2 style=" font-size: 80px">Programming Session</h2>
         </div>
 
         <div class="images_and_info">
-            <pv-panel class="right-panel" >
-              <template #header>
-                <div class="info">
-                    <div class="header-content">
-                      <img :src="selectedImage" alt="random-image" class="header-image">
-                    </div>
-                    <div class="header-text">
-                      <h3>Cardio Exercise</h3>
-                      <p>{{ selectedContent }}</p>
-                    </div>
+          <pv-panel class="right-panel" >
+            <template #header>
+              <div class="info">
+                <div class="header-content">
+                  <img :src="selectedImage" alt="random-image" class="header-image">
                 </div>
-              </template>
-            </pv-panel>
+                <div class="header-text">
+                  <h3>Cardio Exercise</h3>
+                  <p>{{ selectedContent }}</p>
+                </div>
+              </div>
+            </template>
+          </pv-panel>
 
-            <pv-panel class="right-panel" >
-              <template #header>
-                <div class="info">
-                    <div class="header-content">
-                      <img :src="selectedImage2" alt="random-image" class="header-image">
-                    </div>
-                    <div class="header-content">
-                      <div class="header-text">
-                        <h3>Strength Training</h3>
-                        <p>{{selectedContent2}}</p>
-                      </div>
-                    </div>
+          <pv-panel class="right-panel" >
+            <template #header>
+              <div class="info">
+                <div class="header-content">
+                  <img :src="selectedImage2" alt="random-image" class="header-image">
                 </div>
-              </template>
-            </pv-panel>
+                <div class="header-content">
+                  <div class="header-text">
+                    <h3>Strength Training</h3>
+                    <p>{{selectedContent2}}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </pv-panel>
         </div>
 
       </div>
+    </div>
+
+
   </div>
-
-
-</div>
 </template>
 
 <style scoped>
@@ -140,7 +140,7 @@ export default {
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   }
 
-.full-width-card {
+  .full-width-card {
     width: 100%;
     margin-top: 5%;
     display:flex;
@@ -148,55 +148,55 @@ export default {
     align-items:center;
     box-sizing: border-box;
 
-  .container1{
-    width:90%;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    flex-direction: row;
-
-  }
-  .workout_plan{
-    font-size: 70px;
-  }
-  .exercises{
-    display: flex;
-    justify-content: space-around;
-
-  }
-  .image{
-    margin-right: 50%;
-    text-align:center;
-  }
-
-  .container2{
-    width:90%;
-    display:flex;
-    flex-direction: row;
-    justify-content:space-around;
-    align-items:center;
-
-    box-sizing: border-box;
-    .images_and_info{
+    .container1{
+      width:90%;
       display:flex;
-      flex-direction: column;
+      justify-content:space-around;
       align-items:center;
-      justify-content:center;
+      flex-direction: row;
 
     }
-    .header-image{
-      width: 100px;
-      height: 100px;
-      margin-right:10px;
+    .workout_plan{
+      font-size: 70px;
     }
-    .info
-    {
+    .exercises{
+      display: flex;
+      justify-content: space-around;
+
+    }
+    .image{
+      margin-right: 50%;
+      text-align:center;
+    }
+
+    .container2{
+      width:90%;
       display:flex;
+      flex-direction: row;
+      justify-content:space-around;
+      align-items:center;
+
+      box-sizing: border-box;
+      .images_and_info{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:center;
+
+      }
+      .header-image{
+        width: 100px;
+        height: 100px;
+        margin-right:10px;
+      }
+      .info
+      {
+        display:flex;
+      }
+      .header-content{
+        margin-right:10px;
+      }
     }
-    .header-content{
-      margin-right:10px;
-    }
-  }
 
   }
 
