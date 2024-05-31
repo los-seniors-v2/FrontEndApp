@@ -35,12 +35,12 @@ export default {
         </li>
         <li>
           <pv-button>
-            <a href="/programming-session"> Book Session </a>
+            <a href="/programming-session-coach"> Book Session </a>
           </pv-button>
         </li>
         <li>
           <pv-button>
-            <a href="/profile-member"> Profile </a>
+            <a href="/profile-coach"> Profile </a>
           </pv-button>
         </li>
       </ul>

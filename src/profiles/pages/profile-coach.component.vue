@@ -1,11 +1,11 @@
 <script >
-import toolbarComponent from "../../public/components/toolbar.component.vue";
 import SidebarComponent from "../components/sidebar.component.vue";
 import {http} from "../services/http-common.js";
+import toolbarCoachComponent from "../../public/components/toolbar-coach.component.vue";
 
 export default {
   name: "profile-component",
-  components: {SidebarComponent, toolbarComponent},
+  components: {SidebarComponent, toolbarCoachComponent},
   data() {
     return {
       exercises: [],
@@ -35,6 +35,8 @@ export default {
 </script>
 
 <template>
+  <toolbar-coach-component></toolbar-coach-component>
+
   <div class="main">
 
     <div class="container1">

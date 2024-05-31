@@ -8,11 +8,11 @@ export default {
 <template>
 
   <div class="card" style="width: 100%">
-    <card>
+    <pv-card>
       <template #title>
         <h2 style="margin-left: 15%">Session Guidelines</h2>
         <section>
-          <Panel class="right-panel" style="width: 40%">
+          <pv-panel class="right-panel" style="width: 40%">
             <template #header>
               <div class="header-content">
                 <img src="/src/assets/images/stay-hydrated.png" alt="stay-hydrated" class="header-image">
@@ -22,9 +22,9 @@ export default {
                 </div>
               </div>
             </template>
-          </Panel>
+          </pv-panel>
 
-          <Panel class="right-panel" style="width: 40%">
+          <pv-panel class="right-panel" style="width: 40%">
             <template #header>
               <div class="header-content">
                 <img src="/src/assets/images/active-participation.png" alt="stay-hydrated" class="header-image">
@@ -34,7 +34,7 @@ export default {
                 </div>
               </div>
             </template>
-          </Panel>
+          </pv-panel>
         </section>
       </template>
 
@@ -48,10 +48,10 @@ export default {
 
       <template  #footer>
         <div>
-          <Button label="Read More"  style="background-color: black; padding:15px 50px 15px 50px; margin-left: 15%"/>
+          <pv-button label="Read More"  style="background-color: black; padding:15px 50px 15px 50px; margin-left: 15%"/>
         </div>
       </template>
-    </card>
+    </pv-card>
   </div>
 
 </template>

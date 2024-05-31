@@ -95,6 +95,7 @@ export default {
 </script>
 
 <template>
+  <toolbar-component></toolbar-component>
   <div class="main">
 
     <div class="container1">

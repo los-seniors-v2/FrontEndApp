@@ -5,6 +5,7 @@ import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import Tag from "primevue/tag";
+import toolbarComponent from "../../public/components/toolbar.component.vue";
 
 export default {
   name: "book-a-session",
@@ -18,7 +19,8 @@ export default {
   },
   components: {
     Calendar,
-    Tag
+    Tag,
+    toolbarComponent
   },
   created() {
     this.fetchCoaches();
@@ -39,6 +41,8 @@ export default {
 </script>
 
 <template>
+  <toolbar-component></toolbar-component>
+
   <div class="body-container">
     <div class="coaches">
       <div class="coach" v-for="coach in coaches" :key="coach.id">

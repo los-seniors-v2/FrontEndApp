@@ -22,7 +22,6 @@
 </script>
 
 <template>
-  <toolbar-component></toolbar-component>
    <router-view/>
 </template>
 

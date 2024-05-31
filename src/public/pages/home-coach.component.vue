@@ -7,12 +7,11 @@ import weightLiftingInfo from "../../assets/images/active-participation.png";
 import strengthInfo from "../../assets/images/strength-info.jpg";
 import workoutInfo from "../../assets/images/workout-info.jpg";
 
-
-import toolbarComponent from "../components/toolbar.component.vue";
+import toolbarCoachComponent from "../components/toolbar-coach.component.vue";
 
 export default {
   name: "home-coach.component",
-  components: {toolbarComponent},
+  components: {toolbarCoachComponent},
 
   data() {
     return {
@@ -44,6 +43,8 @@ export default {
 </script>
 
 <template>
+  <toolbar-coach-component></toolbar-coach-component>
+
   <div class="main">
     <div class="banner">
       <div class="content">
