@@ -35,7 +35,7 @@ export default {
         </li>
         <li>
           <pv-button>
-            <a href="/book_section"> Book Session </a>
+            <a href="/programming-session"> Book Session </a>
           </pv-button>
         </li>
         <li>
