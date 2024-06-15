@@ -84,7 +84,7 @@ export default {
         <pv-password v-model="confirmPassword" id="confirmPassword" placeholder="Confirm Password" toggleMask />
       </pv-InputGroup>
 
-      <div class="card flex justify-content-center">
+      <div class="card flex justify-content-center" style="margin-bottom:1rem;">
         <div class="flex flex-wrap gap-3">
           <div class="flex align-items-center">
             <pv-radioButton v-model="user.role" inputId="user" name="user" value="User" />
@@ -96,11 +96,17 @@ export default {
           </div>
         </div>
       </div>
-      <pv-button type="submit">Submit</pv-button>
+    <div style="border:1px solid red; text-align:center;" class="centered-button">
+      <pv-button class="centered-button" type="submit" style="width:100%;" >Submit</pv-button>
+    </div>
     </form>
   </div>
 </template>
 
 <style scoped>
-
+.centered-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

@@ -1,7 +1,7 @@
 <script >
 import toolbarComponent from "../../public/components/toolbar.component.vue";
 import SidebarComponent from "../components/sidebar.component.vue";
-import {http} from "../services/http-common.js";
+import {getCalendarRoutines, getUserInfo, http} from "../services/http-common.js";
 
 import squadInfo from "../../assets/images/squad-plank-info.jpg";
 import deadInfo from "../../assets/images/deadlift-info.jpg";
@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       exercises: [],
+      members_info:  [],
       showExercisePanel: false,
       showNutritionPanel: false,
 
@@ -60,6 +61,7 @@ export default {
   },
   created() {
     this.fetchExercises();
+    this.fetchUser();
 
     this.selectedImage = this.selectRandomElement(this.images);
     this.selectedContent = this.selectRandomElement(this.content);
@@ -75,8 +77,14 @@ export default {
   },
   methods: {
     fetchExercises() {
-      http.get().then(response => {
+      getCalendarRoutines().then(response => {
         this.exercises = response.data;
+      });
+    },
+    fetchUser() {
+      getUserInfo().then(response => {
+        const members  = response.data.members;
+        this.members_info = members.find(member => member.id === 1);
       });
     },
     showExercise() {
@@ -107,11 +115,18 @@ export default {
               <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
             </div>
             <div>
-              <h1>Member Name</h1>
+              <h1>{{members_info.firstname}} {{members_info.lastname}}</h1>
               <span class="member-tag">Member </span>
             </div>
         </div>
+        <div class="user_info">
+          <p> FirstName: {{members_info.firstname}}</p>
+          <p> LastName: {{members_info.lastname}}</p>
+          <p> Email: {{members_info.email}}</p>
+          <p> Phone: {{members_info.phone}}</p>
+        </div>
       </div>
+
 
     </div>
 
@@ -251,11 +266,20 @@ export default {
     <h1>Progress Metrics</h1>
     <div class="progress_info">
        <div class="info">
-         Poner Info
+         <p>Body Weight</p>
+         <b>{{members_info.body_weight}} Kg</b>
+         <p>-2 kg</p>
        </div >
        <div class="info">
-         Poner Info
+         <p>Body Height</p>
+         <b>{{members_info.height}} Cm</b>
+         <p>+2 cm</p>
        </div>
+      <div class="info">
+        <p>BMI</p>
+        <b>{{members_info.bmi}}</b>
+        <p>- 0.5 </p>
+      </div>
     </div>
 
 
@@ -280,12 +304,20 @@ export default {
     <div class="container5">
       <h1>Update Profile</h1>
       <div class="form">
-        <label for="username">Username</label>
-        <pv-InputText id="username" v-model="value" placeholder="Enter your name" class="input" />
+        <label for="username">Weight</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter your weight" class="input" />
       </div>
       <div class="form">
-        <label for="username">Age</label>
-        <pv-InputText id="username" v-model="value" placeholder="Enter yor age" class="input" />
+        <label for="username">Height</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter yor height" class="input" />
+      </div>
+      <div class="form">
+        <label for="username">Email</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter yor email" class="input" />
+      </div>
+      <div class="form">
+        <label for="username">Phone</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter yor phone" class="input" />
       </div>
       <Button class="button">Submit</Button>
     </div>
@@ -303,6 +335,7 @@ export default {
     width:100%;
     background-image:linear-gradient(to right,#395BB2 0%,#2956CA 38%,#001855 100%);
     position:relative;
+    display:flex;
 
     .sub-container1{
       display:flex;
@@ -311,14 +344,15 @@ export default {
       align-items: center;
       height:100%;
       width:100%;
-
     }
+
     .sidebar{
       position:absolute;
       top:40%;
       width:10%;
       border:none;
     }
+
     .member-profile{
       width:30%;
       display:flex;
@@ -335,6 +369,9 @@ export default {
       background-color: #719ac3;
       padding:5px;
       box-sizing: border-box;
+    }
+    .user_info{
+      color:white;
     }
   }
   .container2{
@@ -385,14 +422,22 @@ export default {
     margin-bottom: 5rem;
     width:100%;
     .progress_info{
+
       display:flex;
       flex-direction: row;
       justify-content:center;
       align-items:center;
       width:80%;
       .info{
+        font-size:20px;
+
         margin:10px;
-        width:50%;
+        width:30%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-style:dotted;
       }
     }
 
@@ -451,6 +496,7 @@ export default {
     border-radius: 10px;
     padding-left:40px;
     padding-right:40px;
+    color:white;
   }
 
   .member-profile{

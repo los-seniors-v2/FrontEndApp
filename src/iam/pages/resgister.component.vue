@@ -44,9 +44,9 @@ export default {
     <div class="flex justify-content-center ">
       <div>
         <div class="flex justify-content-center">
-          <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:500px" />
+          <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:400px;" />
         </div>
-        <h2 class="flex justify-content-center">Register</h2>
+        <h2 class="flex justify-content-center " style="margin-top: 0;">Register</h2>
       </div>
     </div>
 
@@ -56,7 +56,7 @@ export default {
       <h2 class="m-2">Complete the verification steps below</h2>
       <h4 class="mt-0 mb-4">upload certificate or extra documentation</h4>
       <file-upload-content></file-upload-content>
-      <p>already have an account?<a @click="$router.push('/login')" >Sign in</a></p>
+      <b>Already have an account? <button @click="$router.push('/login')" style="color:white" > Sign in</button></b>
     </div>
   </div>
   </div>

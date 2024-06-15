@@ -73,6 +73,7 @@ export default {
 
 <style>
 .body-container {
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,12 +83,12 @@ export default {
 }
 
 .coaches {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 0.5rem;
+  width:100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 .coach {
+
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -109,9 +110,13 @@ export default {
   text-align: left;
 }
 .book{
+
+  width:100%;
+  height:60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .centered {
   text-align: center;
@@ -149,9 +154,9 @@ button:focus-visible {
 .book-button {
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 40px;
   margin: 10px;
-  width: 35%;
+
 }
 
 </style>

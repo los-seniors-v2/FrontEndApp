@@ -1,25 +1,35 @@
 <script >
 import SidebarComponent from "../components/sidebar.component.vue";
-import {http} from "../services/http-common.js";
-import toolbarCoachComponent from "../../public/components/toolbar-coach.component.vue";
+import {getCalendarRoutines, getUserInfo} from "../services/http-common.js";
+import toolbarComponent from "../../public/components/toolbar.component.vue";
 
 export default {
   name: "profile-component",
-  components: {SidebarComponent, toolbarCoachComponent},
+  components: {toolbarComponent, SidebarComponent},
   data() {
     return {
       exercises: [],
+      coaches_info:[],
       showExercisePanel: false,
       showNutritionPanel: false,
     }
   },
   created() {
     this.fetchExercises();
+    this.fetchUser();
   },
   methods: {
     fetchExercises() {
-      http.get().then(response => {
+      getCalendarRoutines().then(response => {
         this.exercises = response.data;
+      });
+    },
+    fetchUser() {
+      getUserInfo().then(response => {
+        //Extrae info del json y solo se queda con la info del usuario con id 1
+        const coaches  = response.data.coaches;
+        this.coaches_info = coaches.find(coach => coach.id === 2);
+
       });
     },
     showExercise() {
@@ -35,19 +45,28 @@ export default {
 </script>
 
 <template>
-  <toolbar-coach-component></toolbar-coach-component>
+  <toolbar-component></toolbar-component>
 
   <div class="main">
 
     <div class="container1">
       <sidebar-component class="sidebar"></sidebar-component>
-      <!-- Profile of coach here -->
-      <div class="coach-profile">
-      <pv-avatar image="https://cdn.static.aptavs.com/imagenes/cuanto-cuesta-ser-entrenador-personal/cuanto-cuesta-ser-entrenador-personal_905x603.jpg" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
-        <h1>Coach Name</h1>
-        <p>Coach Description</p>
+      <div class="sub-container1">
+          <div class="coach-profile">
+          <pv-avatar image="https://cdn.static.aptavs.com/imagenes/cuanto-cuesta-ser-entrenador-personal/cuanto-cuesta-ser-entrenador-personal_905x603.jpg" alt="profile-coach" shape="circle" size="xlarge"  style=" margin-top: 3%; height:100px; width: 100px"/>
+            <h1>{{coaches_info.firstname}} {{coaches_info.lastname}}</h1>
+            <p>Coach Description</p>
+          </div>
+          <div class="user_info">
+            <p> FirstName: {{coaches_info.firstname}}</p>
+            <p> LastName: {{coaches_info.lastname}}</p>
+            <p> Email: {{coaches_info.email}}</p>
+            <p> Phone: {{coaches_info.phone}}</p>
+          </div>
       </div>
     </div>
+
+
     <div class="container2">
       <div class="left_side">
         <h1 style="margin-top: 35%">Your Workout Plan</h1>
@@ -117,12 +136,20 @@ export default {
     <div class="container4">
       <h1>Update Profile</h1>
       <div class="form">
-        <label for="username">Username</label>
-        <pv-InputText id="username" v-model="value" placeholder="Enter your name" class="input" />
+        <label for="username">Weight</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter your weight" class="input" />
       </div>
       <div class="form">
-        <label for="username">Age</label>
-        <pv-InputText id="username" v-model="value" placeholder="Enter yor age" class="input" />
+        <label for="username">Height</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter yor height" class="input" />
+      </div>
+      <div class="form">
+        <label for="username">Email</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter yor email" class="input" />
+      </div>
+      <div class="form">
+        <label for="username">Phone</label>
+        <pv-InputText id="username" v-model="value" placeholder="Enter yor phone" class="input" />
       </div>
       <Button class="button">Submit</Button>
     </div>
@@ -138,7 +165,7 @@ export default {
 
   .container1{
     width:100%;
-    height: 30%;
+    height: 35%;
     background-image:linear-gradient(to right,#395BB2 0%,#2956CA 38%,#001855 100%);
     position:relative;
     .sidebar{
@@ -146,8 +173,21 @@ export default {
       top:40%;
       width:10%;
       border:none;
-
-
+    }
+    .sub-container1{
+      border:1px solid red;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height:100%;
+      width:100%;
+      .coach-profile{
+        margin-right: 5%;
+      }
+      .user_info{
+        color:white;
+      }
     }
   }
   .container2{
@@ -165,14 +205,14 @@ export default {
   .container3{
     text-align:center;
     width: 100vw;
-    border: 1px solid black;
+
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .card{
-    border: 1px solid #ae0606;
+
     margin: 10px;
     width: 75%;
     display: flex;
@@ -218,6 +258,7 @@ export default {
     border-radius: 10px;
     padding-left:40px;
     padding-right:40px;
+    color:white;
   }
 
   .nutrition-panel{

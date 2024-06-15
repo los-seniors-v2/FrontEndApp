@@ -3,9 +3,12 @@ import Card from "primevue/card"
 import Button from "primevue/button"
 import OverlayPanel from "primevue/overlaypanel"
 import OverlayPanelForm from "./subscription-overlay-panel.component.vue"
+import toolbarComponent from "../../public/components/toolbar.component.vue";
+
 export default {
   name: "Plans",
   components: {
+    toolbarComponent,
     Card,
     Button,
     OverlayPanel,
@@ -21,11 +24,12 @@ export default {
 </script>
 
 <template>
+  <toolbar-component></toolbar-component>
 <div class="flex">
 
     <Card style="width: 25rem; overflow: hidden; margin-right:3em; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
       <template #header>
-        <img alt="user header" src="/src/assets/images/img_test.jpeg"/>
+        <img class="image-fit" alt="user header" src="/src/assets/images/img_test.jpeg"/>
       </template>
       <template #title>Test Plan</template>
       <template #content>
@@ -35,18 +39,18 @@ export default {
         </p>
       </template>
       <template #footer >
-        <div class="flex ">
+        <div class="button ">
           <Button label="Suscribirse" class="w-full" @click="showOverlayPanel" /> <!-- Agrega un evento click al botón -->
         </div>
       </template>
     </Card>
-  
+
 
 
 
   <Card style="width: 25rem; overflow: hidden; margin-right:3em; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  ">
     <template #header>
-      <img alt="user header" src="/src/assets/images/img_mensual.jpeg"/>
+      <img class="image-fit" alt="user header" src="/src/assets/images/img_mensual.jpeg"/>
     </template>
     <template #title>Monthly Plan</template>
     <template #content>
@@ -56,7 +60,7 @@ export default {
       </p>
     </template>
     <template #footer >
-      <div class="flex ">
+      <div class="button ">
         <Button label="Suscribirse" class="w-full" @click="showOverlayPanel" /> <!-- Agrega un evento click al botón -->
       </div>
     </template>
@@ -65,7 +69,7 @@ export default {
 
   <Card style="width: 25rem; overflow: hidden; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     <template #header>
-      <img alt="user header" src="/src/assets/images/img_anual.jpeg"/>
+      <img class="image-fit" alt="user header" src="/src/assets/images/img_anual.jpeg"/>
     </template>
     <template #title>Annual Plan</template>
     <template #content>
@@ -75,7 +79,7 @@ export default {
       </p>
     </template>
     <template #footer >
-      <div class="flex ">
+      <div class="button ">
         <Button label="Suscribirse" class="w-full" @click="showOverlayPanel" /> <!-- Agrega un evento click al botón -->
       </div>
     </template>
@@ -90,12 +94,16 @@ export default {
 </template>
 
 <style scoped>
-div.flex{
+.flex{
+  height:100vh;
   display:flex;
-  flex-direction:row;
   align-items:center;
   justify-content:center;
+  text-align:center;
+}
+.image-fit {
+  object-fit: contain;
+  width: 100%;
 
 }
-
 </style>

@@ -15,22 +15,16 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/routine-list',component: RoutineList},
-        { path: '/plans',component: Plans},
-        { path: '/programming-session',component: BookASessionComponent},
-        {path:'/login',component:LoginComponent},
-        {path:'/register',component:ResgisterComponent},
-        { path: '/',        redirect: '/home'},
-
-        { path: '/routine-list',component: RoutineList},
-        { path: '/plans',component: Plans},
-        { path: '/programming-session',component: BookASessionComponent},
+        { path: '/plans',component: Plans}, //fixed
+        { path: '/programming-session',component: BookASessionComponent}, //fixed
+        {path:'/login',component:LoginComponent},//fixed
+        {path:'/register',component:ResgisterComponent}, //fixed
         { path: '/training-session',component: TrainingSessionComponent},
-
-        {path: '/home', component: HomeComponent},
-        {path: '/home-coach', component: HomeCoachComponent},
-        {path: '/profile-coach', component: ProfileComponent},
-        {path: '/profile-member', component: ProfileMemberComponent},
-        { path: '/',        redirect: '/home'},
+        {path: '/home', component: HomeComponent},//fixed
+        {path: '/home-coach', component: HomeCoachComponent},//fixed
+        {path: '/profile-coach', component: ProfileComponent},//fixed
+        {path: '/profile-member', component: ProfileMemberComponent}, //fixed
+        { path: '/',        redirect: '/login'},
 
     ]
 });

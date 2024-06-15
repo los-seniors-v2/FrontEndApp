@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-content-center">
+  <div class="flex justify-content-center align-items-center " style="height: 100vh" >
     <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
       <div class="text-center mb-5">
         <img src="../../assets/images/flexpal-logo.png" alt="Image" height="50" class="mb-3" />
