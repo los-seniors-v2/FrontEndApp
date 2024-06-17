@@ -5,6 +5,9 @@ export default {
     return {
       visible: false
     }
+  },
+  methods:{
+
   }
 }
 </script >
@@ -16,13 +19,13 @@ export default {
       <ul class="list-none p-0 m-0 overflow-hidden" >
 
         <li>
-          <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+          <a  href="/plans" v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
             <img src="https://www.pngkey.com/png/full/16-162388_membership-badge-png-club-penguin-membership-logo.png" width="50px" height="50px" class="image">
             <span class="font-medium">MemberShip</span>
           </a>
         </li>
-        <li>
-          <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+        <li @click="goLogin">
+          <a  href="/login" v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
             <img src="https://cdn.pixabay.com/photo/2017/05/29/23/02/logging-out-2355227_1280.png" width="50px" height="50px" class="image">
             <span class="font-medium">Log Out</span>
           </a>

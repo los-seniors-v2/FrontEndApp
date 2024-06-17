@@ -97,7 +97,8 @@ export default {
     },
     selectRandomElement(array) {
       return array[Math.floor(Math.random() * array.length)];
-    }
+    },
+
   }
 }
 </script>

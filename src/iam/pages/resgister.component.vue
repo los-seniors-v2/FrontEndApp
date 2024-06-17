@@ -39,30 +39,30 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-content-center">
+  <div class="main">
+  <div class="align-items-center">
   <div class="surface-card  shadow-2 border-round">
     <div class="flex justify-content-center ">
       <div>
-        <div class="flex justify-content-center">
+        <div class="flex justify-content-center align-items-center">
           <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:400px;" />
         </div>
-        <h2 class="flex justify-content-center " style="margin-top: 0;">Register</h2>
+        <h2 class="flex justify-content-center align-items-center" style="margin-top: 0;">Register</h2>
       </div>
     </div>
 
     <form-register @form-submitted="createUser" ></form-register>
 
-    <div class="flex flex-column justify-content-center align-items-center">
-      <h2 class="m-2">Complete the verification steps below</h2>
-      <h4 class="mt-0 mb-4">upload certificate or extra documentation</h4>
-      <file-upload-content></file-upload-content>
-      <b>Already have an account? <button @click="$router.push('/login')" style="color:white" > Sign in</button></b>
-    </div>
   </div>
   </div>
-
+  </div>
 </template>
 
 <style scoped>
-
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

@@ -10,10 +10,10 @@ export default {
       confirmPassword:null
     }
   },
-  methods:{
+  methods: {
     submitForm() {
       console.log('Formulario enviado');
-      if(this.user.password !== this.confirmPassword){
+      if (this.user.password !== this.confirmPassword) {
         console.log('Las contraseñas no coinciden');
         return;
       }
@@ -22,6 +22,9 @@ export default {
     },
     resetForm() {
       this.user = new User();
+    },
+    goLogin() {
+      this.$router.push('/login');
     }
   }
 }
@@ -96,8 +99,8 @@ export default {
           </div>
         </div>
       </div>
-    <div style="border:1px solid red; text-align:center;" class="centered-button">
-      <pv-button class="centered-button" type="submit" style="width:100%;" >Submit</pv-button>
+    <div style=" text-align:center;" class="centered-button">
+      <pv-button @click="goLogin" class="centered-button" type="submit" style="width:100%;" >Submit</pv-button>
     </div>
     </form>
   </div>
