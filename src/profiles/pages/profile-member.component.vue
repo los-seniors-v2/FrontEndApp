@@ -18,6 +18,7 @@ import pullGuide2 from "../../assets/images/pull-push-guide2.jpg";
 import bicepGuide from "../../assets/images/bicep-guide.png";
 import squadGuide2 from "../../assets/images/squad-plank2-guide.png";
 import benchGuide from "../../assets/images/bench-guide.png";
+import {onMounted, ref} from "vue";
 
 
 export default {
@@ -99,6 +100,20 @@ export default {
       return array[Math.floor(Math.random() * array.length)];
     },
 
+
+  },
+  setup(){
+
+    const selectedRoutine = ref(null);
+
+    onMounted(() => {
+      selectedRoutine.value = JSON.parse(localStorage.getItem('selectedRoutine'));
+      console.log(selectedRoutine.value);
+    });
+
+
+
+    return {selectedRoutine};
   }
 }
 </script>
@@ -137,8 +152,8 @@ export default {
           <h1  >Your Workout Plan</h1>
         </div>
         <div>
-          <Button @click="showExercise">Exercise</Button>
-          <Button @click="showNutrition">Nutrition</Button>
+          <pv-button @click="showExercise">Exercise</pv-button>
+          <pv-button @click="showNutrition">Nutrition</pv-button>
         </div>
       </div>
 
@@ -154,11 +169,14 @@ export default {
           </template>
 
           <div>
-            <p> API<br> API </p>
+            <div v-if="selectedRoutine">
+              <h2>{{ selectedRoutine.name }}</h2>
+              <p>{{ selectedRoutine.description }}</p>
+            </div>
           </div>
 
           <template #footer>
-            <Button style="margin-left: 38%">View More</Button>
+            <pv-button style="margin-left: 38%"> Next </pv-button>
           </template>
         </pv-panel>
       </div>
@@ -177,7 +195,7 @@ export default {
           </div>
 
           <template #footer>
-            <Button style="margin-left: 38%">View More</Button>
+            <pv-button style="margin-left: 38%">View More</pv-button>
           </template>
         </pv-panel>
       </div>
@@ -320,7 +338,7 @@ export default {
         <label for="username">Phone</label>
         <pv-InputText id="username" v-model="value" placeholder="Enter yor phone" class="input" />
       </div>
-      <Button class="button">Submit</Button>
+      <pv-button class="button">Submit</pv-button>
     </div>
 
   </div>
@@ -516,9 +534,8 @@ export default {
   }
 
   .exercise-panel{
-    width: 150%;
-    height: 100%;
-    margin: 5% auto;
+    max-height: 100%; /* Ajusta según la necesidad */
+    max-width: 600px;
     overflow-y: auto;
   }
   .header-info {
@@ -563,4 +580,36 @@ export default {
 
 }
 
+@media (max-width: 600px) {
+  .header-info h2 {
+    font-size: 14px;
+  }
+
+  .header-info img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .header-info h2 {
+    font-size: 35px;
+  }
+
+  .header-info img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1980px) {
+  .header-info h2 {
+    font-size: 35px;
+  }
+
+  .header-info img {
+    width: 30px;
+    height: 30px;
+  }
+}
 </style>

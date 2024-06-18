@@ -49,6 +49,8 @@ import Toast from "primevue/toast";
 import ProgressBar from "primevue/progressbar";
 import ConfirmDialog from "primevue/confirmdialog";
 import Avatar from "primevue/avatar";
+import DataView from "primevue/dataview";
+import Paginator from "primevue/paginator";
 
 const app = createApp(App);
 
@@ -82,6 +84,8 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-confirm-dialog', ConfirmDialog)
     .component('pv-avatar',Avatar)
     .component('pv-sidebar', Sidebar)
+    .component('pv-data-view', DataView)
+    .component('pv-paginator', Paginator)
     .use(router);
 app.mount('#app');
 

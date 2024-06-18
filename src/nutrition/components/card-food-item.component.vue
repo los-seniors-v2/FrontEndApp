@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <Card style="width: 25rem; overflow: hidden">
+  <pv-card style="width: 25rem; overflow: hidden">
     <template #header>
     </template>
     <template #title>{{ item.name }}</template>
@@ -28,7 +28,7 @@ export default {
         <strong>Protein (g):</strong> {{ item.protein_g }}
       </p>
     </template>
-  </Card>
+  </pv-card>
 </template>
 
 <style scoped>

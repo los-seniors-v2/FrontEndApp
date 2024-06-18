@@ -32,7 +32,7 @@ export default {
     },
   },
   created() {
-    fetch('/src/app/food-item/services/food-item-api.service.json')
+    fetch('https://jdu202012207.github.io/pruebas-api/food-items.json')
         .then(response => response.json())
         .then(data => {
           this.foodItems = data;
