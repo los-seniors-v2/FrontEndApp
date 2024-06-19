@@ -100,7 +100,7 @@ export default {
         </div>
       </div>
     <div style=" text-align:center;" class="centered-button">
-      <pv-button @click="goLogin" class="centered-button" type="submit" style="width:100%;" >Submit</pv-button>
+      <pv-button class="centered-button" type="submit" style="width:100%;" >Submit</pv-button>
     </div>
     </form>
   </div>

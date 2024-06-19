@@ -5,6 +5,7 @@ import FileUploadContent from "../components/file-upload-content.component.vue";
 import {IamApiService} from "../services/iam-api.service.js";
 import {User} from "../model/user.entity.js";
 
+
 export default {
   name: "resgister",
   components: {FileUploadContent, FormRegister},
@@ -28,12 +29,23 @@ export default {
           displayableUser.role
       )
     },
-    createUser(user){
+    /*createUser(user){
       user= this.convertDisplayableUserToUser(user);
       this.iamService.postUser(user).then((response) => {
         console.log(response.data);
       });
+
+
+    }*/
+
+    createUser(user){
+      user = this.convertDisplayableUserToUser(user);
+      // Save user to localStorage
+      localStorage.setItem(user.email, JSON.stringify(user));
+      console.log('User created successfully');
     }
+
+
   }
 }
 </script>
@@ -51,6 +63,7 @@ export default {
       </div>
     </div>
 
+    <!-- <form-register @form-submitted="createUser" ></form-register>-->
     <form-register @form-submitted="createUser" ></form-register>
 
   </div>

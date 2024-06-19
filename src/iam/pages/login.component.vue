@@ -10,14 +10,15 @@ export default {
       email: "",
       password: "",
       iamService: new IamApiService(),
-      errorMessage: ""
+      errorMessage: "",
+      checked1: false
     };
   },
   created() {
 
   },
   methods:{
-    login() {
+    /*login() {
       this.iamService.loginUser(this.email, this.password).then((response) => {
         if (response.data.length > 0) {
           // User found, handle successful login
@@ -35,6 +36,24 @@ export default {
         this.errorMessage = "An error occurred during login.";
       });
     }
+    */
+    login() {
+      const user = JSON.parse(localStorage.getItem(this.email));
+      if (user && user.password === this.password) {
+        // Passwords match
+        localStorage.setItem('user', JSON.stringify(user));
+        this.$router.push("/home");
+      } else {
+        // Passwords don't match or user not found
+        this.errorMessage = "Invalid email or password.";
+      }
+    }
+
+
+  },
+
+  setup(){
+
   }
 }
 </script>
@@ -49,7 +68,9 @@ export default {
         <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" @click="$router.push('/register')" >Create today!</a>
       </div>
 
+
       <div>
+        <form @submit.prevent="login">
         <label for="email1" class="block text-900 font-medium mb-2">Email</label>
         <pv-InputText v-model="email" id="email1" type="text" placeholder="Email address" class="w-full mb-3" />
 
@@ -65,9 +86,11 @@ export default {
         </div>
 
         <pv-button @click="login" label="Sign In" icon="pi pi-user" class="w-full"></pv-button>
+        </form>
 
         <div v-if="errorMessage" class="text-red-500 mt-3">{{ errorMessage }}</div>
       </div>
+
     </div>
   </div>
 </template>
