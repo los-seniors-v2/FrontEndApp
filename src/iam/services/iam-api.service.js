@@ -2,15 +2,35 @@ import http from "../../shared/services/http-common";
 
 export class IamApiService{
 
-    getAllUsers(){
-        return http.get("/users");
+    // Método para registrar usuario en el servicio de autenticación
+    signUpUser(user) {
+        return http.post("/api/v1/authentication/sign-up", {
+            username: user.username,
+            password: user.password,
+            role: user.role
+        });
     }
 
-    postUser(user){
-        return http.post("/users", user);
+    // Método para crear perfil de usuario
+    createProfile(user) {
+        return http.post("/api/v1/profiles", {
+            firstName: user.firstname,
+            lastName: user.lastname,
+            email: user.email,
+            weight: user.weigth,
+            height: user.heigth,
+            phone: user.phone,
+            role: user.role
+        });
     }
 
-    loginUser(email, password) {
-        return http.get(`/users?email=${email}&password=${password}`);
+    async signInUser(username, password) {
+        try {
+            const response = await http.post("/api/v1/authentication/sign-in", { username, password });
+            return response.data;
+        } catch (error) {
+            console.error('Error signing in user:', error);
+            throw error;
+        }
     }
 }

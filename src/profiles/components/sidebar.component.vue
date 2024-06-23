@@ -7,7 +7,12 @@ export default {
     }
   },
   methods:{
-
+    logout(){
+      localStorage.removeItem('token');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('role');
+      this.$router.push('/login');
+    }
   }
 }
 </script >
@@ -24,8 +29,8 @@ export default {
             <span class="font-medium">MemberShip</span>
           </a>
         </li>
-        <li @click="goLogin">
-          <a  href="/login" v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+        <li @click="logout">
+          <a  v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
             <img src="https://cdn.pixabay.com/photo/2017/05/29/23/02/logging-out-2355227_1280.png" width="50px" height="50px" class="image">
             <span class="font-medium">Log Out</span>
           </a>

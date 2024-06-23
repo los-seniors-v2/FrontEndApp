@@ -18,33 +18,22 @@ export default {
     };
   },
   methods:{
-    //convierte el usuario de la vista en un usuario
-    convertDisplayableUserToUser(displayableUser){
-      return new User(
-          displayableUser.id,
-          displayableUser.firstname,
-          displayableUser.lastname,
-          displayableUser.email,
-          displayableUser.password,
-          displayableUser.role
-      )
-    },
-    /*createUser(user){
-      user= this.convertDisplayableUserToUser(user);
-      this.iamService.postUser(user).then((response) => {
-        console.log(response.data);
-      });
+    async createUser(user) {
+      try {
+        // Crear cuenta de usuario en el servicio de autenticación
+        const authResponse = await this.iamService.signUpUser(user);
+        console.log('User signed up:', authResponse.data);
 
+        // Crear perfil de usuario
+        const profileResponse = await this.iamService.createProfile(user);
+        console.log('Profile created:', profileResponse.data);
 
-    }*/
-
-    createUser(user){
-      user = this.convertDisplayableUserToUser(user);
-      // Save user to localStorage
-      localStorage.setItem(user.email, JSON.stringify(user));
-      console.log('User created successfully');
+        // Mostrar mensaje de éxito o redirigir al usuario
+        this.$router.push('/login');
+      } catch (error) {
+        console.error('Error creating user:', error);
+      }
     }
-
 
   }
 }
