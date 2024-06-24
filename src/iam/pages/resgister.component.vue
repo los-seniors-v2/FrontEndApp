@@ -13,38 +13,27 @@ export default {
     return {
       iamService: new IamApiService(),
       ingredient: null,
-      password:null,
-      confirmPassword:null
+      password: null,
+      confirmPassword: null
     };
   },
-  methods:{
-    //convierte el usuario de la vista en un usuario
-    convertDisplayableUserToUser(displayableUser){
-      return new User(
-          displayableUser.id,
-          displayableUser.firstname,
-          displayableUser.lastname,
-          displayableUser.email,
-          displayableUser.password,
-          displayableUser.role
-      )
-    },
-    /*createUser(user){
-      user= this.convertDisplayableUserToUser(user);
-      this.iamService.postUser(user).then((response) => {
-        console.log(response.data);
-      });
+  methods: {
+    async createUser(user) {
+      try {
+        // Crear cuenta de usuario en el servicio de autenticación
+        const authResponse = await this.iamService.signUpUser(user);
+        console.log('User signed up:', authResponse.data);
 
+        // Crear perfil de usuario
+        const profileResponse = await this.iamService.createProfile(user);
+        console.log('Profile created:', profileResponse.data);
 
-    }*/
-
-    createUser(user){
-      user = this.convertDisplayableUserToUser(user);
-      // Save user to localStorage
-      localStorage.setItem(user.email, JSON.stringify(user));
-      console.log('User created successfully');
+        // Mostrar mensaje de éxito o redirigir al usuario
+        this.$router.push('/login');
+      } catch (error) {
+        console.error('Error creating user:', error);
+      }
     }
-
 
   }
 }
@@ -52,22 +41,22 @@ export default {
 
 <template>
   <div class="main">
-  <div class="align-items-center">
-  <div class="surface-card  shadow-2 border-round">
-    <div class="flex justify-content-center ">
-      <div>
-        <div class="flex justify-content-center align-items-center">
-          <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:400px;" />
+    <div class="align-items-center">
+      <div class="surface-card  shadow-2 border-round">
+        <div class="flex justify-content-center ">
+          <div>
+            <div class="flex justify-content-center align-items-center">
+              <img src="../../assets/images/flexpal-logo.png" alt="logo" style="width:400px;"/>
+            </div>
+            <h2 class="flex justify-content-center align-items-center" style="margin-top: 0;">Register</h2>
+          </div>
         </div>
-        <h2 class="flex justify-content-center align-items-center" style="margin-top: 0;">Register</h2>
+
+        <!-- <form-register @form-submitted="createUser" ></form-register>-->
+        <form-register @form-submitted="createUser"></form-register>
+
       </div>
     </div>
-
-    <!-- <form-register @form-submitted="createUser" ></form-register>-->
-    <form-register @form-submitted="createUser" ></form-register>
-
-  </div>
-  </div>
   </div>
 </template>
 
