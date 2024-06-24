@@ -19,18 +19,13 @@ export default {
       <ul class="list-none p-0 m-0 overflow-hidden" style="display:flex; ">
         <li>
           <pv-button>
-            <a href="/home"> Home </a>
+            <a href="/home-coach"> Home </a>
           </pv-button>
 
         </li>
         <li>
           <pv-button>
-            <a href="/routines"> Routines </a>
-          </pv-button>
-        </li>
-        <li>
-          <pv-button>
-            <a href="/nutrition"> Nutrition </a>
+            <a href="/make-plans"> Fitness Plans </a>
           </pv-button>
         </li>
         <li>

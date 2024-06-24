@@ -11,6 +11,7 @@ import ProfileComponent from "../profiles/pages/profile-coach.component.vue";
 import ProfileMemberComponent from "../profiles/pages/profile-member.component.vue";
 import NutritionComponent from "../nutrition/pages/nutrition-section.vue";
 import RoutineComponent from "../routines/pages/routines-section.vue";
+import FitnessPlanComponent from "../counseling/pages/fitness-plan-component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,6 +28,7 @@ const router = createRouter({
         {path: '/profile-member', component: ProfileMemberComponent}, //fixed
         {path: '/nutrition', component: NutritionComponent},
         {path: '/routines', component: RoutineComponent},
+        {path: '/make-plans', component: FitnessPlanComponent},
         { path: '/',        redirect: '/login'},
 
     ]

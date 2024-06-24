@@ -1,7 +1,7 @@
 <script >
 import SidebarComponent from "../components/sidebar.component.vue";
 import {getCalendarRoutines, getUserInfo} from "../services/http-common.js";
-import toolbarComponent from "../../public/components/toolbar.component.vue";
+import toolbarComponent from "../../public/components/toolbar-coach.component.vue";
 
 export default {
   name: "profile-component",
