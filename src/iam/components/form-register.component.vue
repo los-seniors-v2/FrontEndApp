@@ -1,6 +1,6 @@
 <script>
 import {User} from "../model/user.entity.js";
-
+import axios from 'axios';
 export default {
   name: "form-register",
   components: {},
@@ -11,11 +11,19 @@ export default {
     }
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       if (this.user.password !== this.confirmPassword) {
         console.log('Las contraseñas no coinciden');
         return;
       }
+
+      try {
+        const response = await axios.post('https://flex-pal-36d17cd9c27a.herokuapp.com/api/v1/profiles', this.user);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+
       this.$emit('form-submitted', this.user);
       this.resetForm();
     },
@@ -23,6 +31,7 @@ export default {
       this.user = new User();
       this.confirmPassword = null;
     },
+    
     goLogin() {
       this.$router.push('/login');
     }
