@@ -4,7 +4,7 @@ export class IamApiService{
 
     // Método para registrar usuario en el servicio de autenticación
     signUpUser(user) {
-        return http.post("/api/v1/authentication/sign-up", {
+        return http.post("/api/v1/users", {
             username: user.username,
             password: user.password,
             role: user.role
@@ -26,7 +26,7 @@ export class IamApiService{
 
     async signInUser(username, password) {
         try {
-            const response = await http.post("/api/v1/authentication/sign-in", { username, password });
+            const response = await http.post("/api/v1/users/login", { username, password });
             return response.data;
         } catch (error) {
             console.error('Error signing in user:', error);
