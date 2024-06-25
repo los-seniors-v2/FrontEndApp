@@ -3,7 +3,7 @@ import RoutineList from "../routines/components/routine-list.component.vue"
 import Plans from "../subscription/pages/plans-section.component.vue"
 import BookASessionComponent from "../counseling/pages/book-a-session.component.vue";
 import LoginComponent from "../iam/pages/sign-in.component.vue";
-import RegisterComponent from "../iam/pages/resgister.component.vue";
+import RegisterComponent from "../iam/pages/sign-up.component.vue";
 import TrainingSessionComponent from "../counseling/pages/training-session.component.vue";
 import HomeComponent from "../public/pages/home.component.vue";
 import HomeCoachComponent from "../public/pages/home-coach.component.vue";
