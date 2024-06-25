@@ -1,7 +1,10 @@
 <script>
 
+import LanguageSwitcher from "./language-switcher.component.vue";
+
 export default {
   name: "toolbar-component",
+  components: {LanguageSwitcher},
 
 }
 </script>
@@ -43,9 +46,15 @@ export default {
             <a href="/profile-member"> Profile </a>
           </pv-button>
         </li>
+
+          <language-switcher> i18n </language-switcher>
+
+
+
       </ul>
 
     </template>
+
   </pv-toolbar>
 
 </template>

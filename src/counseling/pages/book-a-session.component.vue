@@ -50,24 +50,24 @@ export default {
         <div>
           <h2>{{ coach.name }}</h2>
           <p><Tag value="New">{{ coach.knowledge }}</Tag></p>
-          <p>Reach out for personalized guidance.</p>
+          <p>{{ $t('coach.guidance') }}</p>
         </div>
       </div>
     </div>
     <div class="book">
-      <h1 class="centered">Book a Training Session</h1>
-      <p class="centered">Fill in the details</p>
+      <h1 class="centered">{{ $t('book.title') }}</h1>
+      <p class="centered">{{ $t('book.details') }}</p>
       <div class="details">
-        <p>Select Coach</p>
+        <p>{{ $t('book.selectCoach') }}</p>
         <div class="coach-selection">
           <button v-for="coach in coaches" :key="coach.id" @click="selectedCoach = coach">{{ coach.name }}</button>
         </div>
-        <p>Session Date</p>
+        <p>{{ $t('book.sessionDate') }}</p>
         <Calendar v-model="selectedDate" placeholder="Select Date" class="wide-calendar"></Calendar>
       </div>
-      <button class="book-button">Book Now</button>
+      <button class="book-button">{{ $t('book.bookNow') }}</button>
     </div>
-    <footer>© 2024 FlexPal. All rights reserved.</footer>
+    <footer>{{ $t('footer') }}</footer>
   </div>
 </template>
 

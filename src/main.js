@@ -52,6 +52,7 @@ import Avatar from "primevue/avatar";
 import DataView from "primevue/dataview";
 import Paginator from "primevue/paginator";
 import {createPinia} from "pinia";
+import i18n from "./i18n.js";
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -91,4 +92,5 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-paginator', Paginator)
     .use(router);
 app.mount('#app');
+app.use(i18n);
 

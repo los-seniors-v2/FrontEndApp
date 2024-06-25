@@ -1,0 +1,26 @@
+{
+  "welcome": "¡Bienvenido a FlexPal!",
+  "track": "Registra tus planes de entrenamiento y nutrición aquí.",
+  "workout" : "Tus planes de entrenamiento",
+  "exercise-information": "Información de ejercicios",
+  "cardio-description": "Para mejorar la salud cardiovascular a través de actividades aeróbicas regulares y consistentes.",
+  "running-description": "Correr es una de las formas más efectivas de ejercicio aeróbico.",
+  "jump-rope-description": "Saltar la cuerda beneficia varios músculos al mismo tiempo.",
+  "weight-lifting-description": "Para construir músculo y fuerza a través de ejercicios regulares y enfocados de entrenamiento de fuerza.",
+  "strength-training-description": "Haz ejercicios de entrenamiento de fuerza para todos los grupos musculares principales al menos dos veces a la semana.",
+  "beginner-guide-description": "Usa nuestra guía de entrenamiento de fuerza para principiantes para comenzar a perder peso y construir músculo.",
+
+  "coach": {
+    "knowledge": "Nuevo",
+    "guidance": "Ponte en contacto para obtener orientación personalizada."
+  },
+  "book": {
+    "title": "Reserva una sesión de entrenamiento",
+    "details": "Rellena los detalles",
+    "selectCoach": "Selecciona un entrenador",
+    "sessionDate": "Fecha de la sesión",
+    "bookNow": "Reservar ahora"
+  },
+  "footer": "© 2024 FlexPal. Todos los derechos reservados."
+
+}

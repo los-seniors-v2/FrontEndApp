@@ -95,9 +95,20 @@ export default {
     showNutrition() {
       this.showExercisePanel = false;
       this.showNutritionPanel = true;
+      this.fetchNutritionPlan(this.selectedFitnessPlanId);
     },
     selectRandomElement(array) {
       return array[Math.floor(Math.random() * array.length)];
+    },
+    fetchNutritionPlan(fitnessPlanId) {
+      http.get(`/api/v1/fitness-plans/${fitnessPlanId}/nutritional-meals`)
+          .then(response => {
+            this.nutritionPlan = response.data;
+            console.log('Nutrition Plan fetched:', this.nutritionPlan);
+          })
+          .catch(error => {
+            console.error('Error fetching nutrition plan:', error);
+          });
     },
 
 
@@ -587,7 +598,53 @@ export default {
 
   .header-info img {
     width: 30px;
-    height: 30px;
+    height: 30px !important;
+  }
+
+  .left_side{
+
+      font-size: 10px !important;
+
+  }
+
+  .container2-5{
+    .right_side{
+      width: 50%;
+    }
+    font-size: 10px;
+  }
+
+  .user_info{
+    font-size: 10px;
+    margin-left: 8%;
+  }
+  h1{
+    font-size: 15px;
+
+  }
+  p{
+    font-size: 10px;
+  }
+  .recommended-panel{
+    width: 600px;
+    padding-left: 1%;
+  }
+
+  .exercise-panel{
+    max-height: 100%; /* Ajusta según la necesidad */
+    max-width: 800px;
+    width: 200px !important;
+    overflow-y: auto;
+   h2{
+      font-size: 10px;
+
+   }
+  }
+  .nutrition-panel{
+    max-height: 100%; /* Ajusta según la necesidad */
+    max-width: 800px;
+    width: 500px !important;
+    overflow-y: auto;
   }
 }
 
@@ -604,12 +661,26 @@ export default {
 
 @media (max-width: 1980px) {
   .header-info h2 {
-    font-size: 35px;
+    font-size: 25px;
   }
 
   .header-info img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+  }
+  .exercise-panel{
+    max-height: 100%; /* Ajusta según la necesidad */
+    max-width: 800px;
+    width: 500px;
+    overflow-y: auto;
+}
+  .nutrition-panel{
+    max-height: 100%; /* Ajusta según la necesidad */
+    max-width: 800px;
+    width: 500px !important;
+    overflow-y: auto;
   }
 }
+
+
 </style>

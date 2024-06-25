@@ -17,15 +17,23 @@ export default {
   data() {
     return {
       images: [cardioInfo, runningInfo, jumpRopeInfo],
-      content: ["For improving cardio vascular health through regular and consistent aerobic activities.", "Running is one of the most effective forms of aerobic exercise.", "Jumping rope benefits several muscles at the same time."],
+      content: ["cardio-description", "running-description", "jump-rope-description"],
       selectedImage: "",
       selectedContent: "",
 
       images2: [weightLiftingInfo, strengthInfo, workoutInfo],
-      content2: ["To build muscle and strength through regular and focused strength training exercises.", "Do strength training exercises for all major muscle groups at least two times a week.", "Use our beginner strength training guide to begin losing weight and building muscle."],
+      content2: ["weight-lifting-description", "strength-training-description", "beginner-guide-description"],
       selectedImage2: "",
       selectedContent2: ""
     };
+  },
+  computed: {
+    selectedContent() {
+      return this.$t(this.selectedContent);
+    },
+    selectedContent2() {
+      return this.$t(this.selectedContent2);
+    }
   },
   methods: {
     selectRandomElement(array) {
@@ -49,8 +57,8 @@ export default {
   <div class="banner">
     <div class="content">
       <br>
-      <h1 style="font-size:4rem">Welcome to Your Gym App!</h1><br>
-      <p style="font-size: 2rem">Track your workout plans and nutrition here.</p>
+      <h1 style="font-size:4rem">{{ $t('welcome') }}</h1><br>
+      <p style="font-size: 2rem">{{ $t('track') }}</p>
       <br>
     </div>
   </div>
@@ -60,7 +68,7 @@ export default {
 
       <div class="container1">
         <div>
-          <h2  class="workout_plan">Your Workout Plan</h2>
+          <h2  class="workout_plan">{{ $t('workout') }}</h2>
         </div>
 
         <div  class="exercises">
@@ -81,7 +89,7 @@ export default {
 
       <div class="container2">
         <div>
-          <h2 style=" font-size: 80px">Exercise Information</h2>
+          <h2 style=" font-size: 80px">{{ $t('exercise-information') }}</h2>
         </div>
 
         <div class="images_and_info">
