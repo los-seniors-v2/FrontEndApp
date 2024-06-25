@@ -81,7 +81,6 @@ export const useAuthenticationStore = defineStore({
                     router.push({name: 'sign-up'});
                 });
         },
-
         /**
          * Sign out the user
          * @param router - The router instance

@@ -24,7 +24,7 @@ export default {
       this.confirmPassword = null;
     },
     goLogin() {
-      this.$router.push('/login');
+      this.$router.push('/sign-in');
     }
   }
 }

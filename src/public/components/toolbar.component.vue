@@ -1,8 +1,20 @@
 <script>
+import {useAuthenticationStore} from "../../iam/services/authentication.store.js";
+import {useRouter} from "vue-router";
 
 export default {
-  name: "toolbar-component",
-
+  name: "toolbarComponent",
+  data() {
+    return {
+      router: useRouter(),
+      authenticationStore: useAuthenticationStore()
+    }
+  },
+  methods: {
+    onSignOut() {
+      this.authenticationStore.signOut(this.router);
+    }
+  }
 }
 </script>
 
@@ -42,6 +54,9 @@ export default {
           <pv-button>
             <a href="/profile-member"> Profile </a>
           </pv-button>
+        </li>
+        <li>
+          <button @click="onSignOut">Sign Out</button>
         </li>
       </ul>
 
