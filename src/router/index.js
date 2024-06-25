@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import RoutineList from "../routines/components/routine-list.component.vue"
 import Plans from "../subscription/pages/plans-section.component.vue"
 import BookASessionComponent from "../counseling/pages/book-a-session.component.vue";
-import LoginComponent from "../iam/pages/login.component.vue";
+import LoginComponent from "../iam/pages/sign-in.component.vue";
 import RegisterComponent from "../iam/pages/resgister.component.vue";
 import TrainingSessionComponent from "../counseling/pages/training-session.component.vue";
 import HomeComponent from "../public/pages/home.component.vue";
@@ -19,17 +19,17 @@ const router = createRouter({
         { path: '/routine-list',component: RoutineList},
         { path: '/plans',component: Plans}, //fixed
         { path: '/programming-session',component: BookASessionComponent}, //fixed
-        {path:'/login',component:LoginComponent},//fixed
-        {path:'/register',component:RegisterComponent}, //fixed
+        {path:'/sign-in',component:LoginComponent},//fixed
+        {path:'/sign-up',component:RegisterComponent}, //fixed
         { path: '/training-session',component: TrainingSessionComponent},
-        {path: '/home', component: HomeComponent},//fixed
+        {path: '/home', name:'home',component: HomeComponent},//fixed
         {path: '/home-coach', component: HomeCoachComponent},//fixed
         {path: '/profile-coach', component: ProfileComponent},//fixed
         {path: '/profile-member', component: ProfileMemberComponent}, //fixed
         {path: '/nutrition', component: NutritionComponent},
         {path: '/routines', component: RoutineComponent},
         {path: '/make-plans', component: FitnessPlanComponent},
-        { path: '/',        redirect: '/login'},
+        { path: '/',        redirect: '/sign-in'},
 
     ]
 });

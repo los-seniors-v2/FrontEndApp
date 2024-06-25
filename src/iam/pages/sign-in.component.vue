@@ -1,12 +1,14 @@
 <script>
-import {IamApiService} from "../services/iam-api.service.js";
-
+import {useAuthenticationStore} from "../services/authentication.store.js";
+import {SignInRequest} from "../model/sign-in.request.js";
 
 export default {
-  name: "login",
+  name: "sign-in",
   components: {},
   data() {
     return {
+      checked1: false, // or any default value you want
+      errorMessage: '', // or any default value you want
       username: '',
       password: ''
     };
@@ -31,12 +33,12 @@ export default {
         <img src="../../assets/images/flexpal-logo.png" alt="Image" height="50" class="mb-3"/>
         <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
         <span class="text-600 font-medium line-height-3">Don't have an account?</span>
-        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" @click="$router.push('/register')">Create
+        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" @click="$router.push('/sign-up')">Create
           today!</a>
       </div>
 
       <div>
-        <form @submit.prevent="login">
+        <form @submit.prevent="onSignIn">
           <label for="username" class="block text-900 font-medium mb-2">Username</label>
           <pv-InputText v-model="username" id="username" type="text" placeholder="Username" class="w-full mb-3"/>
 

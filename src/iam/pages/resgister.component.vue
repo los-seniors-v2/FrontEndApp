@@ -29,7 +29,7 @@ export default {
         console.log('Profile created:', profileResponse.data);
 
         // Mostrar mensaje de éxito o redirigir al usuario
-        this.$router.push('/login');
+        this.$router.push('/sign-in');
       } catch (error) {
         console.error('Error creating user:', error);
       }

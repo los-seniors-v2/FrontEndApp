@@ -51,13 +51,16 @@ import ConfirmDialog from "primevue/confirmdialog";
 import Avatar from "primevue/avatar";
 import DataView from "primevue/dataview";
 import Paginator from "primevue/paginator";
+import {createPinia} from "pinia";
 
+const pinia = createPinia();
 const app = createApp(App);
 
 app.use(PrimeVue, { ripple: true })
     .use(DialogService)
     .use(ConfirmationService)
     .use(ToastService)
+    .use(pinia)
     .component('pv-card', Card)
     .component('pv-select-Button', SelectButton)
     .component('Sidebar', Sidebar)
