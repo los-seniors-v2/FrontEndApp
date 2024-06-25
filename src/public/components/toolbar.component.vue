@@ -1,10 +1,19 @@
 <script>
-
 import LanguageSwitcher from "./language-switcher.component.vue";
-
 export default {
   name: "toolbar-component",
-  components: {LanguageSwitcher},
+  data() {
+    return {
+      router: useRouter(),
+      authenticationStore: useAuthenticationStore(),
+      components: {LanguageSwitcher}
+    }
+  },
+  methods: {
+    onSignOut() {
+      this.authenticationStore.signOut(this.router);
+    }
+  }
 
 }
 </script>
@@ -46,15 +55,13 @@ export default {
             <a href="/profile-member"> Profile </a>
           </pv-button>
         </li>
-
-          <language-switcher> i18n </language-switcher>
-
-
-
+        <li>
+          <button @click="onSignOut">Sign Out</button>
+        </li>
+        <language-switcher> i18n </language-switcher>
       </ul>
 
     </template>
-
   </pv-toolbar>
 
 </template>

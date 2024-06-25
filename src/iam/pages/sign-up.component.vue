@@ -3,22 +3,32 @@ import { useAuthenticationStore } from '../services/authentication.store.js';
 import FormRegister from "../components/form-register.component.vue";
 import FileUploadContent from "../components/file-upload-content.component.vue";
 import {SignUpRequest} from "../model/sign-up.request.js";
-
+import { postProfile } from '../services/profile.service.js';
 
 export default {
   name: "sign-up",
   components: {FileUploadContent, FormRegister},
   data() {
     return {
-      username: '',
-      password: ''
+      user: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        weigth: '',
+        heigth: '',
+        phone: '',
+        username: '',
+        password: '',
+        role: ''
+      }
     };
   },
   methods: {
-    onSignUp() {
+   onSignUp() {
       let authenticationStore = useAuthenticationStore();
-      let signUpRequest = new SignUpRequest(this.username, this.password);
+      let signUpRequest = new SignUpRequest(this.username, this.password, this.role);
       authenticationStore.signUp(signUpRequest, this.$router);
+      
     }
   }
 }

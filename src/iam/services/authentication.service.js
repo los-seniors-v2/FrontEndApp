@@ -8,4 +8,5 @@ export class AuthenticationService {
     signUp(signUpRequest) {
         return http.post('/authentication/sign-up', signUpRequest);
     }
+   
 }

@@ -12,6 +12,7 @@ import ProfileMemberComponent from "../profiles/pages/profile-member.component.v
 import NutritionComponent from "../nutrition/pages/nutrition-section.vue";
 import RoutineComponent from "../routines/pages/routines-section.vue";
 import FitnessPlanComponent from "../counseling/pages/fitness-plan-component.vue";
+import {authenticationGuard} from "../iam/services/authentication.guard.js";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -19,8 +20,8 @@ const router = createRouter({
         { path: '/routine-list',component: RoutineList},
         { path: '/plans',component: Plans}, //fixed
         { path: '/programming-session',component: BookASessionComponent}, //fixed
-        {path:'/sign-in',component:LoginComponent},//fixed
-        {path:'/sign-up',component:RegisterComponent}, //fixed
+        {path:'/sign-in',name:'sign-in', component:LoginComponent},//fixed
+        {path:'/sign-up',name:'sign-up', component:RegisterComponent}, //fixed
         { path: '/training-session',component: TrainingSessionComponent},
         {path: '/home', name:'home',component: HomeComponent},//fixed
         {path: '/home-coach', component: HomeCoachComponent},//fixed
@@ -29,9 +30,19 @@ const router = createRouter({
         {path: '/nutrition', component: NutritionComponent},
         {path: '/routines', component: RoutineComponent},
         {path: '/make-plans', component: FitnessPlanComponent},
-        { path: '/',        redirect: '/sign-in'},
+        { path: '/',        redirect: '/home'},
 
     ]
 });
+router.beforeEach((to, from, next) => {
+    const publicPages = ['/sign-in', '/sign-up'];
+    const authRequired = !publicPages.includes(to.path);
+    const token = localStorage.getItem('token');
 
+    if (authRequired && !token) {
+        return next('/sign-in');
+    }
+
+    next();
+});
 export default router;
