@@ -7,36 +7,19 @@ export default {
   components: {},
   data() {
     return {
-      username: "",
-      password: "",
-      iamService: new IamApiService(),
-      errorMessage: "",
-      checked1: false
+      username: '',
+      password: ''
     };
   },
   created() {
 
   },
   methods: {
-
-    async login() {
-      try {
-        const response = await this.iamService.signInUser(this.username, this.password);
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('userId', response.id);
-        localStorage.setItem('role', response.role);
-        this.$router.push("/home");
-      } catch (error) {
-        this.errorMessage = "Invalid username or password.";
-        console.error('Error logging in:', error);
-      }
+    onSignIn() {
+      let authenticationStore = useAuthenticationStore();
+      let signInRequest = new SignInRequest(this.username, this.password);
+      authenticationStore.signIn(signInRequest, this.$router);
     }
-
-
-  },
-
-  setup() {
-
   }
 }
 </script>
