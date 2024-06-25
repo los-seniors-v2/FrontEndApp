@@ -1,7 +1,10 @@
 <script>
 import LanguageSwitcher from "./language-switcher.component.vue";
+import {useAuthenticationStore} from "../../iam/services/authentication.store.js";
+import {useRouter} from "vue-router";
 export default {
   name: "toolbar-component",
+  components: {LanguageSwitcher},
   data() {
     return {
       router: useRouter(),
